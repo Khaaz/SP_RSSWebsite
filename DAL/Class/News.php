@@ -6,7 +6,10 @@
  * Time: 11:26 PM
  */
 
-class News
-{
+class News {
 
+    private $url;
+    public function __construct(String $url) {
+        $this->url = $url;
+    }
 }

@@ -22,7 +22,7 @@ class Connection extends PDO {
         return $this->stmt->execute();
     }
 
-    public function getResults($query, array $parameters = []) {
+    public function getResults($query, array $parameters = []) : Array {
         $this->executeQuery($query, $parameters);
         return $this->stmt->fetchAll();
     }

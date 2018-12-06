@@ -1,7 +1,7 @@
 <?php
 
 //gen
-$rep=__DIR__.'/../';
+$REP=__DIR__.'/../';
 
 // liste des modules à inclure
 
@@ -11,14 +11,14 @@ $rep=__DIR__.'/../';
 
 //BD
 
-$base="sasa";
-$login="";
-$mdp="";
+$BASE="mysql:host=berlin.iut.local;dbname=dblarossi";
+$LOGIN="larossi";
+$PWD="achanger";
 
 //Vues
 
-$vues['erreur']='Views/error.php';
-$vues['vuephp1']='Views/main.php';
+$VIEWS['error']='Views/error.php';
+$VIEWS['base']='Views/base.php';
 
 
 ?>

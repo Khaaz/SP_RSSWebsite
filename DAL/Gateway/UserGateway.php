@@ -10,11 +10,11 @@ class UserGateway {
 
     private $con;
 
-    public function __construct($con) {
-        $this->con = $con;
+    public function __construct() {
+        $this->con = new Connection();
     }
 
-    public function findByUsername($username) : User {
+    public function findByUsername($username) : Array {
         // get user from DB + create new User()
         // and return
     }

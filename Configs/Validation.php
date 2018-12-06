@@ -8,11 +8,30 @@
 
 class Validation {
 
+    public static function Valid_page(int $page) : bool {
+        echo"omg";
+        if (!isset($page)) {
+            return false;
+        }
+        echo "what98";
+        $res = filter_var($page, FILTER_VALIDATE_INT);
+        var_dump($res);
+    }
+
     public static function Valid_name(string $str) : bool {
         if (isset($str)) {
-            return filter_var($str, FILTER_VALIDATE_);
+            return filter_var($str, FILTER_VALIDATE_INT);
         }
         $regex = "/[A-Z][a-z]{1,30}(-[A-Z])?[a-z]{,30}/";
+        if (!filter_var(
+            $str,
+            FILTER_VALIDATE_REGEXP,
+            array(
+                "options" => array("regexp"=>$regex))
+        )
+        ) {
+            return false;
+        }
         return false;
     }
 

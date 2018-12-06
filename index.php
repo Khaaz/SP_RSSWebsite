@@ -11,6 +11,6 @@
     require_once(__DIR__.'/Configs/Autoload.php');
     Autoload::charger();
 
-    $cont = new Controleur();
+    $cont = new UserController();
 
 ?> 
