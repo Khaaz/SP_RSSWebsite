@@ -77,30 +77,15 @@
                     <p>Lorem ipsum dolsit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
             </div>
-            <div class="row row-striped">
-                <div class="col-2 text-right">
-                    <h1 class="display-4"><span class="badge badge-secondary">27</span></h1>
-                    <h2>OCT</h2>
-                </div>
-                <div class="col-10">
-                    <h3 class="text-uppercase"><strong>Operations Meeting</strong></h3>
-                    <ul class="list-inline">
-                        <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Friday</li>
-                        <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 2:30 PM - 4:00 PM</li>
-                        <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> Room 4019</li>
-                    </ul>
-                    <p>Lorem ipsum dolsit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-            </div>
             <?php
-            //foreach ($NEWS as $n) {
+            foreach ($NEWS as $n) {
                 echo '<div class="row row-striped">';
                     echo '<div class="col-2 text-right">';
                         echo '<h1 class="display-4"><span class="badge badge-secondary">27</span></h1>';
                         echo '<h2>OCT</h2>';
                     echo '</div>';
                     echo '<div class="col-10">';
-                        echo '<h3 class="text-uppercase"><strong>Operations Meeting</strong></h3>';
+                        echo "<h3 class='text-uppercase'><strong>$n->titre</strong></h3>";
                         echo '<ul class="list-inline">';
                             echo '<li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Friday</li>';
                             echo '<li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 2:30 PM - 4:00 PM</li>';
@@ -109,7 +94,7 @@
                         echo '<p>Lorem ipsum dolsit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>';
                     echo '</div>';
                 echo '</div>';
-            //}
+            }
             ?>
         </div>
 

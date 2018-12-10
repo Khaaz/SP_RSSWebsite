@@ -8,8 +8,8 @@
 
 class News {
 
-    private $url;
-    private $titre;
+    public $url;
+    public $titre;
     private $siteProvenance;
     private $date;
 
