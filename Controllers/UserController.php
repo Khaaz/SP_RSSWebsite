@@ -44,7 +44,7 @@ class UserController {
         //if (!Validation::Valid_page($page)) {
         //    $page = 1;
         //}
-        $NEWS = Model::getNews($page);
+        //$NEWS = Model::getNews($page);
         require ($REP.$VIEWS['base']);
     }
 
