@@ -11,11 +11,23 @@ class UserGateway {
     private $con;
 
     public function __construct() {
-        $this->con = new Connection();
+        global $BASE, $LOGIN, $PWD;
+        $this->con = new Connection($BASE, $LOGIN, $PWD);
     }
 
     public function findByUsername($username) : Array {
-        // get user from DB + create new User()
-        // and return
+        $query = "SELECT * FROM TUser WHERE Username=:username;";
+        $allUsr=[];
+
+        $results = $this->con->getResults($query, array(
+            ':username' => array($username, PDO::PARAM_STR)
+        ));
+
+        foreach($results as $res){
+            $U=new User($res["Username"],$res["Password"],$res["Name"],$res["Surname"],$res["Mail"]);
+            $allUsr[]=$U;
+        }
+
+        return $allUsr;
     }
 }

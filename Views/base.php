@@ -49,7 +49,8 @@
     <div>
         <?php
             foreach ($NEWS as $n) {
-                echo $n['url'];
+                //var_dump($n);
+                //$n['url'];
                 echo '</br>';
             }
         ?>

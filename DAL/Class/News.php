@@ -9,7 +9,16 @@
 class News {
 
     private $url;
-    public function __construct(String $url) {
+    private $titre;
+    private $siteProvenance;
+    private $date;
+
+    public function __construct(String $url, String $titre, String $siteProvenance, String $date) {
         $this->url = $url;
+        $this->titre =$titre;
+        $this->siteProvenance =$siteProvenance;
+        $this->date =$date;
+
     }
+
 }

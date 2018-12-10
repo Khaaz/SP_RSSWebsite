@@ -9,13 +9,10 @@
 class Validation {
 
     public static function Valid_page(int $page) : bool {
-        echo"omg";
         if (!isset($page)) {
             return false;
         }
-        echo "what98";
         $res = filter_var($page, FILTER_VALIDATE_INT);
-        var_dump($res);
     }
 
     public static function Valid_name(string $str) : bool {

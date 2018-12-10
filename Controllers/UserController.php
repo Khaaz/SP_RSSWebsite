@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: khaaz
@@ -13,21 +14,18 @@ class UserController {
     }
 
     function execute() {
-        echo "test";
         global $REP, $VIEWS;
         try {
             $action = $_REQUEST['action'];
 
             switch ($action) {
                 case null:
-                    echo "what2";
                     $this->base($REP, $VIEWS);
                     break;
                 case 'click':
                     $this->onClick($REP, $VIEWS);
                     break;
                 default:
-                    echo "what";
                     $this->base($REP, $VIEWS);
             }
         } catch(PDOException $e) {
@@ -40,16 +38,13 @@ class UserController {
     }
 
     function base($REP, $VIEWS) {
-        echo "what3";
-        $page = $_GET['page'] || 1;
 
-        if (!Validation::Valid_page($page)) {
-            echo "what4";
-            $page = 1;
-        }
-        echo "what18";
+        $page = $_GET['page'] || 0;
+
+        //if (!Validation::Valid_page($page)) {
+        //    $page = 1;
+        //}
         $NEWS = Model::getNews($page);
-        var_dump($NEWS);
         require ($REP.$VIEWS['base']);
     }
 

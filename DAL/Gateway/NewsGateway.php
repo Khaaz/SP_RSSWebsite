@@ -16,12 +16,19 @@ class NewsGateway {
     }
 
     public function getNews(int $page) : Array {
-        $query2 = "SELECT FROM TNews ORDER BY DESC LIMIT :news, 10;";
-        $query = "SELECT * FROM TNews;";
+        $query = "SELECT * FROM TNews LIMIT :news ,10;";
+        $allNews=[];
 
-        return $this->con->getResults($query, array(
-            ':news' => array(1, PDO::PARAM_INT)
+        $results = $this->con->getResults($query, array(
+            ':news' => array($page, PDO::PARAM_INT)
         ));
+
+        foreach($results as $res){
+            $N=new News($res["url"],$res["titre"],$res["siteprovenance"],$res["date"]);
+            $allNews[]=$N;
+            }
+
+        return $allNews;
     }
 
 }
