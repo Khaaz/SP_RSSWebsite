@@ -17,18 +17,31 @@ class NewsGateway {
 
     public function getNews(int $page) : Array {
         $query = "SELECT * FROM TNews LIMIT :news ,10;";
-        $allNews=[];
+        $allNews = [];
 
         $results = $this->con->getResults($query, array(
             ':news' => array($page, PDO::PARAM_INT)
         ));
 
         foreach($results as $res){
-            $N=new News($res["url"],$res["titre"],$res["siteprovenance"],$res["date"]);
-            $allNews[]=$N;
-            }
+            $N = new News($res["Url"], $res["Title"], $res["Website"], $res["Date"]);
+            $allNews[] = $N;
+        }
 
         return $allNews;
     }
+    public function getTotNews() : Array {
+        $query = "SELECT count * FROM TNews;";
+        $ret = [];
+
+        $results = $this->con->getResults($query);
+
+        foreach($results as $res){
+            $ret[]= $res;
+        }
+
+        return $ret;
+    }
+
 
 }
