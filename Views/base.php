@@ -53,19 +53,24 @@
         }
         ?>
         <nav class="row mx-auto p-5 w-100" aria-label="Navigation">
-            <ul class="pagination">
+            <ul class="pagination mx-auto">
                 <?php
-                    if (!isset($TOTNEWS) || !isset($CURPAGE)) {
+                    if (!isset($CURPAGE) || !isset($TOTPAGE)) {
                         return;
                     }
                     $min = $CURPAGE > 2 ? $CURPAGE - 2 : 1;
-                    $max = $CURPAGE < $TOTNEWS - 2 ? $CURPAGE + 2 : $TOTNEWS;
-                    $prev = $CURPAGE == 1 ? 1 : $CURPAGE - 1;
-                    $next = $CURPAGE == $TOTNEWS ? $TOTNEWS : $CURPAGE + 1;
+                    $max = $CURPAGE < ($TOTPAGE - 2) ? $CURPAGE + 2 : $TOTPAGE;
+                    $prev = $CURPAGE <= 1 ? 1 : $CURPAGE - 1;
+                    $next = $CURPAGE >= $TOTPAGE ? $TOTPAGE : $CURPAGE + 1;
                     echo "<li class='page-item'><a class='page-link' href='index.php?page=$prev'>Previous</a></li>";
                     $i = $min;
-                    for($i; $i < $max; $i++) {
-                        echo "<li class='page-item'><a class='page-link' href='index.php?page=$i'>$i</a></li>";
+                    for($i; $i < $max + 1; $i++) {
+                        if ($i == $CURPAGE) {
+                            echo "<li class='page-item active'><a class='page-link' href='index.php?page=$i'>$i</a></li>";
+                        } else {
+                            echo "<li class='page-item'><a class='page-link' href='index.php?page=$i'>$i</a></li>";
+                        }
+
                     }
                     echo "<li class='page-item'><a class='page-link' href='index.php?page=$next'>Next</a></li>";
                 ?>
