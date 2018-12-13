@@ -54,10 +54,12 @@ body {
  */
 .masthead {
   margin-bottom: 2rem;
+  font-family: Poppins-Regular;
 }
 
 .masthead-brand {
   margin-bottom: 0;
+  //font-family: Poppins-Medium;
 }
 
 .nav-masthead .nav-link {
