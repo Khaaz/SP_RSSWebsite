@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f5b734a-ce33-4f33-8db5-33768bc5f013" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Controllers/FrontController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/FrontController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/addnews.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/addnews.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/base.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/base.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,8 +26,8 @@
       <file leaf-file-name="addnews.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Views/addnews.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="30" column="59" lean-forward="true" selection-start-line="30" selection-start-column="59" selection-end-line="30" selection-end-column="59" />
+            <state relative-caret-position="531">
+              <caret line="63" column="44" selection-start-line="63" selection-start-column="44" selection-end-line="63" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -241,7 +239,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24422000" />
+    <option name="totallyTimeSpent" value="24776000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1173" extended-state="6" />
@@ -635,8 +633,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Views/addnews.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="30" column="59" lean-forward="true" selection-start-line="30" selection-start-column="59" selection-end-line="30" selection-end-column="59" />
+        <state relative-caret-position="531">
+          <caret line="63" column="44" selection-start-line="63" selection-start-column="44" selection-end-line="63" selection-end-column="44" />
         </state>
       </provider>
     </entry>

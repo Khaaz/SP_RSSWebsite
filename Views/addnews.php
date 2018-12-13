@@ -28,8 +28,8 @@
         <div class="inner">
             <h3 class="masthead-brand">RSS Website</h3>
             <nav class="nav nav-masthead justify-content-center">
-                <a class="nav-link active" href="index.php?page=0">Home</a>
-                <a class="nav-link" href="index.php?action=admin">Admin</a>
+                <a class="nav-link" href="index.php?page=0">Home</a>
+                <a class="nav-link active" href="index.php?action=admin">Admin</a>
                 <a class="nav-link" href="#">Trending</a>
             </nav>
         </div>
@@ -44,24 +44,24 @@
 
                 <div class="wrap-input2 validate-input" data-validate="Name is required">
                     <input class="input2" type="text" name="RSS URL">
-                    <span class="focus-input2" data-placeholder="NAME"></span>
+                    <span class="focus-input2" data-placeholder="Rss Url"></span>
                 </div>
 
-                <div class="wrap-input2 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-                    <input class="input2" type="text" name="email">
-                    <span class="focus-input2" data-placeholder="EMAIL"></span>
+                <div class="wrap-input2 validate-input" data-validate="Name is required">
+                    <input class="input2" type="text" name="RSS URL">
+                    <span class="focus-input2" data-placeholder="Website Name"></span>
                 </div>
 
-                <div class="wrap-input2 validate-input" data-validate = "Message is required">
-                    <textarea class="input2" name="message"></textarea>
-                    <span class="focus-input2" data-placeholder="MESSAGE"></span>
+                <div class="wrap-input2 validate-input" data-validate="Name is required">
+                    <input class="input2" type="text" name="RSS URL">
+                    <span class="focus-input2" data-placeholder="Website Url"></span>
                 </div>
 
                 <div class="container-contact2-form-btn">
                     <div class="wrap-contact2-form-btn">
                         <div class="contact2-form-bgbtn"></div>
                         <button class="contact2-form-btn">
-                            Send Your Message
+                            Insert Your News
                         </button>
                     </div>
                 </div>
