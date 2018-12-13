@@ -52,12 +52,13 @@ class UserController {
         //}
 
         $TOTNEWS = Model::getTotalNews();
+        $TOTPAGE = ceil($TOTNEWS / $NEWSPERPAGE);
 
-        if ($CURPAGE < $TOTNEWS / $NEWSPERPAGE) {
+        if ($CURPAGE > $TOTPAGE) {
             $CURPAGE = 1;
         }
 
-        $NEWS = Model::getNews($CURPAGE / $NEWSPERPAGE - 1);
+        $NEWS = Model::getNews($CURPAGE * $NEWSPERPAGE - $NEWSPERPAGE);
         require ($REP.$VIEWS['base']);
     }
 
