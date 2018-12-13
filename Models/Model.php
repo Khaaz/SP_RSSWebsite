@@ -11,4 +11,9 @@ class Model {
         $gw = new NewsGateway();
         return $gw->getNews($page);
     }
+
+    static function getTotalNews(): Array {
+        $gw = new NewsGateway();
+        return $gw->getTotNews()[0];
+    }
 }

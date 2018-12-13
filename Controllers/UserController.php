@@ -9,8 +9,6 @@
 
 class UserController {
     function __construct() {
-        session_start();
-        $this->execute();
     }
 
     function execute() {
@@ -39,12 +37,15 @@ class UserController {
 
     function base($REP, $VIEWS) {
 
-        $page = $_GET['page'] || 0;
+        $CURPAGE = $_GET['page'] || 0;
 
         //if (!Validation::Valid_page($page)) {
         //    $page = 1;
         //}
-        //$NEWS = Model::getNews($page);
+
+        $TOTNEWS = Model::getTotalNews();
+
+        //$NEWS = Model::getNews($CURPAGE);
         require ($REP.$VIEWS['base']);
     }
 

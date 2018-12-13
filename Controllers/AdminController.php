@@ -6,7 +6,11 @@
  * Time: 11:27 PM
  */
 
-class AdminController
-{
+class AdminController {
+    public function __construct() {
+    }
 
+    public function createNews() {
+
+    }
 }
