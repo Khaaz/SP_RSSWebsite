@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="Cool RSS site">
+        <meta name="description" content="RSS site">
         <meta name="author" content="Pas nos nom">
         <!--<link rel="icon" href="../../../../favicon.ico"> -->
 
@@ -17,16 +17,16 @@
         <link href="./dist/css/base.css" rel="stylesheet">
     </head>
 
-    <body class="text-center">
+    <body class="h-auto text-center">
 
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <div class="container row-1 w-100 h-100 p-3">
         <header class="masthead mb-auto">
             <div class="inner">
-                <h3 class="masthead-brand">Cover</h3>
+                <h3 class="masthead-brand">RSS Website</h3>
                 <nav class="nav nav-masthead justify-content-center">
                     <a class="nav-link active" href="#">Home</a>
-                    <a class="nav-link" href="#">Features</a>
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="#">Admin</a>
+                    <a class="nav-link" href="#">Trending</a>
                 </nav>
             </div>
         </header>
@@ -43,6 +43,81 @@
                         <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Monday</li>
                         <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 12:30 PM - 2:00 PM</li>
                         <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> Cafe</li>
+                    </ul>
+                    <p>Lorem ipsum dolsit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+            <div class="row row-striped">
+                <div class="col-2 text-right">
+                    <h1 class="display-4"><span class="badge badge-secondary">27</span></h1>
+                    <h2>OCT</h2>
+                </div>
+                <div class="col-10">
+                    <h3 class="text-uppercase"><strong>Operations Meeting</strong></h3>
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Friday</li>
+                        <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 2:30 PM - 4:00 PM</li>
+                        <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> Room 4019</li>
+                    </ul>
+                    <p>Lorem ipsum dolsit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+            <div class="row row-striped">
+                <div class="col-2 text-right">
+                    <h1 class="display-4"><span class="badge badge-secondary">27</span></h1>
+                    <h2>OCT</h2>
+                </div>
+                <div class="col-10">
+                    <h3 class="text-uppercase"><strong>Operations Meeting</strong></h3>
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Friday</li>
+                        <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 2:30 PM - 4:00 PM</li>
+                        <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> Room 4019</li>
+                    </ul>
+                    <p>Lorem ipsum dolsit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+            <div class="row row-striped">
+                <div class="col-2 text-right">
+                    <h1 class="display-4"><span class="badge badge-secondary">27</span></h1>
+                    <h2>OCT</h2>
+                </div>
+                <div class="col-10">
+                    <h3 class="text-uppercase"><strong>Operations Meeting</strong></h3>
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Friday</li>
+                        <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 2:30 PM - 4:00 PM</li>
+                        <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> Room 4019</li>
+                    </ul>
+                    <p>Lorem ipsum dolsit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+            <div class="row row-striped">
+                <div class="col-2 text-right">
+                    <h1 class="display-4"><span class="badge badge-secondary">27</span></h1>
+                    <h2>OCT</h2>
+                </div>
+                <div class="col-10">
+                    <h3 class="text-uppercase"><strong>Operations Meeting</strong></h3>
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Friday</li>
+                        <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 2:30 PM - 4:00 PM</li>
+                        <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> Room 4019</li>
+                    </ul>
+                    <p>Lorem ipsum dolsit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+            <div class="row row-striped">
+                <div class="col-2 text-right">
+                    <h1 class="display-4"><span class="badge badge-secondary">27</span></h1>
+                    <h2>OCT</h2>
+                </div>
+                <div class="col-10">
+                    <h3 class="text-uppercase"><strong>Operations Meeting</strong></h3>
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Friday</li>
+                        <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 2:30 PM - 4:00 PM</li>
+                        <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> Room 4019</li>
                     </ul>
                     <p>Lorem ipsum dolsit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
@@ -98,9 +173,9 @@
             ?>
         </div>
 
-        <footer class="mastfoot mt-auto">
+        <footer class="container row-1 w-100 h-100 p-3">
             <div class="inner">
-                <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+                <p>All right reserved.</p>
             </div>
         </footer>
 
