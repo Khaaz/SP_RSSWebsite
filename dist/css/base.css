@@ -1,5 +1,19 @@
 @import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic");
 @import url("//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
+@font-face {
+  font-family: Poppins-Regular;
+  src: url('../fonts/poppins/Poppins-Regular.ttf');
+}
+
+@font-face {
+  font-family: Poppins-Medium;
+  src: url('../fonts/poppins/Poppins-Medium.ttf');
+}
+
+@font-face {
+  font-family: Poppins-Bold;
+  src: url('../fonts/poppins/Poppins-Bold.ttf');
+}
 
 /*
  * Globals
@@ -12,6 +26,9 @@ a:hover {
   color: #fff;
 }
 
+.text-uppercase {
+  font-family: Poppins-Regular;
+}
 /* Custom default button */
 .btn-secondary,
 .btn-secondary:hover,
@@ -59,7 +76,6 @@ body {
 
 .masthead-brand {
   margin-bottom: 0;
-  //font-family: Poppins-Medium;
 }
 
 .nav-masthead .nav-link {

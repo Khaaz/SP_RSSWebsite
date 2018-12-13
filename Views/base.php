@@ -18,8 +18,6 @@
 </head>
 
 <body class="h-auto text-center">
-<div class="container row-1 w-100 h-100 p-3">
-
     <div class="container row-1 w-100 h-100 p-3">
         <header class="masthead mb-auto">
             <div class="inner">
@@ -31,60 +29,59 @@
                 </nav>
             </div>
         </header>
-    <!-- MAIN -->
-    <div class="container">
-        <?php
-        foreach ($NEWS as $n) {
-            echo '<div class="row row-striped">';
-            echo '<div class="col-2 text-right">';
-            echo '<h1 class="display-4"><span class="badge badge-secondary">27</span></h1>';
-            echo '<h2>OCT</h2>';
-            echo '</div>';
-            echo '<div class="col-10">';
-            echo "<h3 class='text-uppercase'><strong>$n->titre</strong></h3>";
-            echo '<ul class="list-inline">';
-            echo '<li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Friday</li>';
-            echo '<li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 2:30 PM - 4:00 PM</li>';
-            echo '<li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> Room 4019</li>';
-            echo '</ul>';
-            echo '<p>Lorem ipsum dolsit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>';
-            echo '</div>';
-            echo '</div>';
-        }
-        ?>
-        <nav class="row mx-auto p-5 w-100" aria-label="Navigation">
-            <ul class="pagination mx-auto">
-                <?php
-                    if (!isset($CURPAGE) || !isset($TOTPAGE)) {
-                        return;
-                    }
-                    $min = $CURPAGE > 2 ? $CURPAGE - 2 : 1;
-                    $max = $CURPAGE < ($TOTPAGE - 2) ? $CURPAGE + 2 : $TOTPAGE;
-                    $prev = $CURPAGE <= 1 ? 1 : $CURPAGE - 1;
-                    $next = $CURPAGE >= $TOTPAGE ? $TOTPAGE : $CURPAGE + 1;
-                    echo "<li class='page-item'><a class='page-link' href='index.php?page=$prev'>Previous</a></li>";
-                    $i = $min;
-                    for($i; $i < $max + 1; $i++) {
-                        if ($i == $CURPAGE) {
-                            echo "<li class='page-item active'><a class='page-link' href='index.php?page=$i'>$i</a></li>";
-                        } else {
-                            echo "<li class='page-item'><a class='page-link' href='index.php?page=$i'>$i</a></li>";
+        <!-- MAIN -->
+        <div class="container">
+            <?php
+            foreach ($NEWS as $n) {
+                echo '<div class="row row-striped">';
+                echo '<div class="col-2 text-right">';
+                echo '<h1 class="display-4"><span class="badge badge-secondary">27</span></h1>';
+                echo '<h2>OCT</h2>';
+                echo '</div>';
+                echo '<div class="col-10">';
+                echo "<h3 class='text-uppercase'><strong>$n->titre</strong></h3>";
+                echo '<ul class="list-inline">';
+                echo '<li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Friday</li>';
+                echo '<li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 2:30 PM - 4:00 PM</li>';
+                echo '<li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> Room 4019</li>';
+                echo '</ul>';
+                echo '<p>Lorem ipsum dolsit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>';
+                echo '</div>';
+                echo '</div>';
+            }
+            ?>
+            <nav class="row mx-auto p-5 w-100" aria-label="Navigation">
+                <ul class="pagination mx-auto">
+                    <?php
+                        if (!isset($CURPAGE) || !isset($TOTPAGE)) {
+                            return;
                         }
+                        $min = $CURPAGE > 2 ? $CURPAGE - 2 : 1;
+                        $max = $CURPAGE < ($TOTPAGE - 2) ? $CURPAGE + 2 : $TOTPAGE;
+                        $prev = $CURPAGE <= 1 ? 1 : $CURPAGE - 1;
+                        $next = $CURPAGE >= $TOTPAGE ? $TOTPAGE : $CURPAGE + 1;
+                        echo "<li class='page-item'><a class='page-link' href='index.php?page=$prev'>Previous</a></li>";
+                        $i = $min;
+                        for($i; $i < $max + 1; $i++) {
+                            if ($i == $CURPAGE) {
+                                echo "<li class='page-item active'><a class='page-link' href='index.php?page=$i'>$i</a></li>";
+                            } else {
+                                echo "<li class='page-item'><a class='page-link' href='index.php?page=$i'>$i</a></li>";
+                            }
 
-                    }
-                    echo "<li class='page-item'><a class='page-link' href='index.php?page=$next'>Next</a></li>";
-                ?>
-            </ul>
-        </nav>
-    </div>
-
-    <!-- FOOTER -->
-    <footer class="container row-1 w-100 h-100 p-3">
-        <div class="inner">
-            <p>All right reserved.</p>
+                        }
+                        echo "<li class='page-item'><a class='page-link' href='index.php?page=$next'>Next</a></li>";
+                    ?>
+                </ul>
+            </nav>
         </div>
-    </footer>
-</div>
+        <!-- FOOTER -->
+        <footer class="container row-1 w-100 h-100 p-3">
+            <div class="inner">
+                <p>All right reserved.</p>
+            </div>
+        </footer>
+    </div>
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
