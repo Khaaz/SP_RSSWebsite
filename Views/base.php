@@ -25,7 +25,7 @@
             <div class="inner">
                 <h3 class="masthead-brand">RSS Website</h3>
                 <nav class="nav nav-masthead justify-content-center">
-                    <a class="nav-link active" href="#">Home</a>
+                    <a class="nav-link active" href="index.php?page=0">Home</a>
                     <a class="nav-link" href="index.php?action=admin">Admin</a>
                     <a class="nav-link" href="#">Trending</a>
                 </nav>
@@ -64,8 +64,7 @@
                     $next = $CURPAGE == $TOTNEWS ? $TOTNEWS : $CURPAGE + 1;
                     echo "<li class='page-item'><a class='page-link' href='index.php?page=$prev'>Previous</a></li>";
                     $i = $min;
-                    for(; $i < $max; $i++) {
-                        var_dump('toto'.$i);
+                    for($i; $i < $max; $i++) {
                         echo "<li class='page-item'><a class='page-link' href='index.php?page=$i'>$i</a></li>";
                     }
                     echo "<li class='page-item'><a class='page-link' href='index.php?page=$next'>Next</a></li>";

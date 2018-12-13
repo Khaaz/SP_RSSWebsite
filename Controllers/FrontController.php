@@ -23,6 +23,10 @@ class FrontController
                     $ctrl = new UserController();
                     $ctrl->base($REP, $VIEWS);
                     break;
+                case 'admin':
+                    $ctrl = new UserController();
+                    $ctrl->admin($REP, $VIEWS);
+                    break;
                 case 'createRss':
                     $ctrl = new AdminController();
                     $ctrl->createRss($REP, $VIEWS);

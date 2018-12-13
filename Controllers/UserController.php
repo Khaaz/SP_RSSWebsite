@@ -24,6 +24,7 @@ class UserController {
                     $this->onClick($REP, $VIEWS);
                     break;
                 case 'admin':
+                    echo "WTf";
                     $this->admin($REP, $VIEWS);
                     break;
                 default:
