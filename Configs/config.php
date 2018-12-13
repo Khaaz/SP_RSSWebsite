@@ -19,6 +19,7 @@ $PWD="achanger";
 
 $VIEWS['error']='Views/error.php';
 $VIEWS['base']='Views/base.php';
+$VIEWS['admin']='Views/addnews.php';
 
 
 ?>

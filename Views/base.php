@@ -25,7 +25,7 @@
                 <h3 class="masthead-brand">RSS Website</h3>
                 <nav class="nav nav-masthead justify-content-center">
                     <a class="nav-link active" href="#">Home</a>
-                    <a class="nav-link" href="#">Admin</a>
+                    <a class="nav-link" href="index.php?action=admin">Admin</a>
                     <a class="nav-link" href="#">Trending</a>
                 </nav>
             </div>

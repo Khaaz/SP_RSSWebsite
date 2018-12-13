@@ -25,6 +25,9 @@ class UserController {
                 case 'click':
                     $this->onClick($REP, $VIEWS);
                     break;
+                case 'admin':
+                    $this->admin($REP, $VIEWS);
+                    break;
                 default:
                     $this->base($REP, $VIEWS);
             }
@@ -45,10 +48,14 @@ class UserController {
         //    $page = 1;
         //}
         //$NEWS = Model::getNews($page);
-        require ($REP.$VIEWS['base']);
+        require ($REP. $VIEWS['base']);
     }
 
     function onClick() {
 
+    }
+
+    function admin($REP, $VIEWS) {
+        require ($REP. $VIEWS['admin']);
     }
 }
