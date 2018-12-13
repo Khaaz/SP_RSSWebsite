@@ -15,6 +15,7 @@ $BASE="mysql:host=berlin.iut.local;dbname=dblarossi";
 $LOGIN="larossi";
 $PWD="achanger";
 
+$NEWSPERPAGE = 5;
 //Vues
 
 $VIEWS['error']='Views/error.php';

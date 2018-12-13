@@ -16,7 +16,8 @@ class NewsGateway {
     }
 
     public function getNews(int $page) : Array {
-        $query = "SELECT * FROM TNews LIMIT :news ,10;";
+        global $NEWSPERPAGE;
+        $query = "SELECT * FROM TNews ORDER BY Date DESC LIMIT :news,$NEWSPERPAGE;";
         $allNews = [];
 
         $results = $this->con->getResults($query, array(
@@ -31,13 +32,12 @@ class NewsGateway {
         return $allNews;
     }
     public function getTotNews() : Array {
-        $query = "SELECT count * FROM TNews;";
+        $query = "SELECT count(*) FROM TNews;";
         $ret = [];
-
         $results = $this->con->getResults($query);
 
-        foreach($results as $res){
-            $ret[]= $res;
+        foreach($results as $res) {
+            $ret[]= $res[0];
         }
 
         return $ret;

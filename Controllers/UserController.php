@@ -39,8 +39,12 @@ class UserController {
     }
 
     function base($REP, $VIEWS) {
+        global $NEWSPERPAGE;
+        $CURPAGE = $_GET['page'];
 
-        $CURPAGE = $_GET['page'] || 0;
+        if (empty($CURPAGE) || strlen($CURPAGE) == 0 || $CURPAGE < 1) {
+            $CURPAGE = 1;
+        }
 
         //if (!Validation::Valid_page($page)) {
         //    $page = 1;
@@ -48,7 +52,11 @@ class UserController {
 
         $TOTNEWS = Model::getTotalNews();
 
-        $NEWS = Model::getNews($CURPAGE);
+        if ($CURPAGE < $TOTNEWS / $NEWSPERPAGE) {
+            $CURPAGE = 1;
+        }
+
+        $NEWS = Model::getNews($CURPAGE / $NEWSPERPAGE - 1);
         require ($REP.$VIEWS['base']);
     }
 
@@ -57,6 +65,6 @@ class UserController {
     }
 
     function admin($REP, $VIEWS) {
-        require ($REP. $VIEWS['admin']);
+        require ($REP.$VIEWS['admin']);
     }
 }
