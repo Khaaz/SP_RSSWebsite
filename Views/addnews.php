@@ -42,18 +42,18 @@
                         Add News
 					</span>
 
-                <div class="wrap-input2 validate-input" data-validate="Name is required">
+                <div class="wrap-input2 validate-input" data-validate="Field is required">
                     <input class="input2" type="text" name="RSS URL">
                     <span class="focus-input2" data-placeholder="Rss Url"></span>
                 </div>
 
-                <div class="wrap-input2 validate-input" data-validate="Name is required">
-                    <input class="input2" type="text" name="RSS URL">
+                <div class="wrap-input2 validate-input" data-validate="Field is required">
+                    <input class="input2" type="text" name="Website Name">
                     <span class="focus-input2" data-placeholder="Website Name"></span>
                 </div>
 
-                <div class="wrap-input2 validate-input" data-validate="Name is required">
-                    <input class="input2" type="text" name="RSS URL">
+                <div class="wrap-input2 validate-input" data-validate="Field is required">
+                    <input class="input2" type="text" name="Website Url">
                     <span class="focus-input2" data-placeholder="Website Url"></span>
                 </div>
 
