@@ -15,7 +15,7 @@
 
     <!-- Custom styles for this template -->
     <link href="./dist/css/base.css" rel="stylesheet">
-    <link href="./dist/css/main.css" rel="stylesheet">
+    <link href="./dist/css/addNews.css" rel="stylesheet">
     <link href="./dist/css/util.css" rel="stylesheet">
 
 

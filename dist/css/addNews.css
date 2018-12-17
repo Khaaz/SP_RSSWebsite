@@ -275,7 +275,7 @@ textarea.input2 + .focus-input2::after {
 }
 
 .input2:focus + .focus-input2::after {
-  top: -13px;
+  top: -20px;
 }
 
 .input2:focus + .focus-input2::before {
@@ -283,7 +283,7 @@ textarea.input2 + .focus-input2::after {
 }
 
 .has-val.input2 + .focus-input2::after {
-  top: -13px;
+  top: -20px;
 }
 
 .has-val.input2 + .focus-input2::before {

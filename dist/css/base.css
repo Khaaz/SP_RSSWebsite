@@ -26,9 +26,29 @@ a:hover {
   color: #fff;
 }
 
+#signin {
+  left:63%;
+  margin-top: 4%;
+
+}
 .text-uppercase {
   font-family: Poppins-Regular;
 }
+
+.input-group{
+  width: 15%;
+
+  margin-right: 1%;
+}
+.btn-primary:hover{
+  background: linear-gradient(90deg,  #000000, #e6e6e6);
+}
+
+.btn-primary{
+  background: linear-gradient(90deg, #e6e6e6, #000000);
+  border:none;
+}
+
 /* Custom default button */
 .btn-secondary,
 .btn-secondary:hover,
@@ -44,6 +64,7 @@ a:hover {
  * Base structure
  */
 
+
 html {
   height: 100%;
 }
@@ -51,6 +72,7 @@ html {
 html, body {
   height: 100%;
   background-color: #333;
+  font-family: Poppins-Regular, sans-serif;
 }
 
 body {
