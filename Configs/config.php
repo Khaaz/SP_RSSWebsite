@@ -1,26 +1,26 @@
 <?php
 
-//gen
+// Dir
 $REP=__DIR__.'/../';
 
-// liste des modules à inclure
+// Get data from config.json instead of hardcoded values
+$string = file_get_contents("./config.json");
+$json = json_decode($string, true);
 
-//$dConfig['includes']= array('controleur/Validation.php');
+$BASE = $json['db'];
+$LOGIN = $json['login'];
+$PWD = $json['password'];
 
-
-
-//BD
-
-$BASE="mysql:host=berlin.iut.local;dbname=dblarossi";
-$LOGIN="larossi";
-$PWD="achanger";
+// $BASE = "mysql:host=berlin.iut.local;dbname=dblarossi";
+// $LOGIN = "larossi";
+// $PWD = "achanger";
 
 $NEWSPERPAGE = 5;
-//Vues
 
+// Views
 $VIEWS['error']='Views/error.php';
 $VIEWS['base']='Views/base.php';
-$VIEWS['admin']='Views/addnews.php';
+$VIEWS['admin']='Views/admin.php';
 
 
 ?>

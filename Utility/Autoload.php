@@ -30,7 +30,7 @@ class Autoload {
     private static function _autoload($class) {
         global $rep;
         $filename = $class.'.php';
-        $dir =array('Models/','./','Configs/','Controllers/', 'DAL/', 'DAL/Class/', 'DAL/Gateway/');
+        $dir =array('Models/','./','Configs/','Controllers/', 'DAL/', 'DAL/Class/', 'DAL/Gateway/','DAL/Factory/');
         foreach ($dir as $d){
             $file=$rep.$d.$filename;
             if (file_exists($file))
