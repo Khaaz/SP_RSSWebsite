@@ -43,17 +43,17 @@
 					</span>
 
                 <div class="wrap-input2 validate-input" data-validate="Field is required">
-                    <input class="input2" type="text" name="RSS URL">
+                    <input class="input2" type="text" name="RssUrl">
                     <span class="focus-input2" data-placeholder="Rss Url"></span>
                 </div>
 
                 <div class="wrap-input2 validate-input" data-validate="Field is required">
-                    <input class="input2" type="text" name="Website Name">
+                    <input class="input2" type="text" name="WebsiteName">
                     <span class="focus-input2" data-placeholder="Website Name"></span>
                 </div>
 
                 <div class="wrap-input2 validate-input" data-validate="Field is required">
-                    <input class="input2" type="text" name="Website Url">
+                    <input class="input2" type="text" name="WebsiteUrl">
                     <span class="focus-input2" data-placeholder="Website Url"></span>
                 </div>
 

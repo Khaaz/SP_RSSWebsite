@@ -21,12 +21,12 @@ class UserController {
                 break;
             case null:
             default:
-                $this->base($REP, $VIEWS);
+                $this->base($actor, $REP, $VIEWS);
         }
 
     }
 
-    function base($REP, $VIEWS) {
+    function base($actor, $REP, $VIEWS) {
         global $NEWSPERPAGE;
         $CURPAGE = $_GET['page'];
 
@@ -34,7 +34,7 @@ class UserController {
             $CURPAGE = 1;
         }
 
-        //if (!Validation::Valid_page($page)) {
+        //if (!Valider::Valid_page($page)) {
         //    $page = 1;
         //}
 
@@ -45,16 +45,24 @@ class UserController {
         //    $CURPAGE = 1;
         //}
 
+        $ADMIN = $actor;
+
+
         //$NEWS = Model::getNews($CURPAGE * $NEWSPERPAGE - $NEWSPERPAGE);
         require ($REP.$VIEWS['base']);
     }
 
     function onConnect($REP, $VIEWS) {
-        $usr = $_POST['login'];
+        $usr = $_POST['username'];
         $pwd = $_POST['password'];
 
-        if (!ModelAdmin::connection($usr, $pwd)) {
-            echo 'lol';
+        // if ADMIN == NULL - show error message
+        $ADMIN = ModelAdmin::connection($usr, $pwd);
+
+        if (!$ADMIN) {
+            $FAILCON = true;
         }
+
+        require ($REP.$VIEWS['base']);
     }
 }

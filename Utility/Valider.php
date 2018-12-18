@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Class Validation
+ * Class Valider
  */
-class Validation {
+class Valider {
 
     public static function Valid_page(int $page) : bool {
         if (!isset($page)) {
@@ -29,19 +29,42 @@ class Validation {
         return false;
     }
 
-    public static function Clean_name(string $str) : string {
+    public static function Valid_surname(string $str) : bool {
         if (isset($str)) {
-            return filter_var($str, FILTER_SANITIZE_EMAIL);
+            return filter_var($str, FILTER_VALIDATE_EMAIL);
         }
         return false;
     }
+
     public static function Valid_email(string $str) : bool {
         if (isset($str)) {
             return filter_var($str, FILTER_VALIDATE_EMAIL);
         }
         return false;
     }
-    public static function Clean_email(string $str) : string {
+
+    public static function Valid_login(string $str) : bool {
+        if (isset($str)) {
+            return filter_var($str, FILTER_VALIDATE_EMAIL);
+        }
+        return false;
+    }
+
+    public static function Valid_password(string $str) : bool {
+        if (isset($str)) {
+            return filter_var($str, FILTER_VALIDATE_EMAIL);
+        }
+        return false;
+    }
+
+    public static function Valid_url(string $str) : bool {
+        if (isset($str)) {
+            return filter_var($str, FILTER_VALIDATE_EMAIL);
+        }
+        return false;
+    }
+
+    public static function Clean_name(string $str) : string {
         if (isset($str)) {
             return filter_var($str, FILTER_SANITIZE_EMAIL);
         }

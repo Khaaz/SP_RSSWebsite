@@ -51,11 +51,13 @@ class FrontController
         } catch(PDOException $e) {
 
             $ERRORS[] =	"DataBase error";
+            $ERRORS[] = $e;
             require ($REP.$VIEWS['error']);
 
         } catch (Exception $e) {
 
             $ERRORS[] =	"Unexpected error";
+            $ERRORS[] = $e;
             require ($REP.$VIEWS['error']);
 
         }

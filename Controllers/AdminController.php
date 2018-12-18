@@ -33,11 +33,13 @@ class AdminController {
     }
 
     public function onDisconnect($REP, $VIEWS) {
-
+        ModelAdmin::disconnection();
     }
 
     public function onAddNews($REP, $VIEWS) {
-
+        $usr = $_POST['RssUrl'];
+        $pwd = $_POST['WebsiteName'];
+        $pwd = $_POST['WebsiteUrl'];
     }
 
     public function onDelNews($REP, $VIEWS) {

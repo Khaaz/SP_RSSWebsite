@@ -31,19 +31,41 @@
             </div>
 
         </header>
-        <form id="signin" class="masthead row col-12" role="form">
-            <div class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <input id="email" type="email" class="form-control" name="email" value="" placeholder="Email Address">
-            </div>
+        <?php
 
-            <div class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                <input id="password" type="password" class="form-control" name="password" value="" placeholder="Password">
-            </div>
+            if (isset($ADMIN)) {
+                if (isset($FAILCON) && $FAILCON) {
+                    echo '<form id="signin" class="masthead row col-12" role="form">';
+                    echo '<div class="input-group">';
+                    echo '<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>';
+                    echo '<input id="username" type="text" class="form-control" name="username" value="" placeholder="Invalid Username">';
+                    echo '</div>';
+                    echo '<div class="input-group">';
+                    echo '<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>';
+                    echo '<input id="password" type="password" class="form-control" name="password" value="" placeholder="Invalid Password">';
+                    echo '</div>';
+                    echo '<button type="submit" class="btn btn-primary">Login</button>';
+                    echo '</form>';
+                } else {
+                    // show here login thing
+                    echo 'CONNECTED';
+                }
 
-            <button type="submit" class="btn btn-primary">Login</button>
-        </form>
+            } else {
+                echo '<form id="signin" class="masthead row col-12" role="form">';
+                echo '<div class="input-group">';
+                echo '<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>';
+                echo '<input id="username" type="text" class="form-control" name="username" value="" placeholder="Username">';
+                echo '</div>';
+                echo '<div class="input-group">';
+                echo '<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>';
+                echo '<input id="password" type="password" class="form-control" name="password" value="" placeholder="Password">';
+                echo '</div>';
+                echo '<button type="submit" class="btn btn-primary">Login</button>';
+                echo '</form>';
+            }
+        ?>
+
         <!-- MAIN -->
         <div class="container">
             <?php
