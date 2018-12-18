@@ -15,6 +15,7 @@
 
     <!-- Custom styles for this template -->
     <link href="./dist/css/base.css" rel="stylesheet">
+
 </head>
 
 <body class="h-auto text-center">
@@ -28,20 +29,21 @@
                     <a class="nav-link" href="#">Trending</a>
                 </nav>
             </div>
-            <form id="signin" class="masthead row col-12" role="form">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <input id="email" type="email" class="form-control" name="email" value="" placeholder="Email Address">
-                </div>
 
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                    <input id="password" type="password" class="form-control" name="password" value="" placeholder="Password">
-                </div>
-
-                <button type="submit" class="btn btn-primary">Login</button>
-            </form>
         </header>
+        <form id="signin" class="masthead row col-12" role="form">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input id="email" type="email" class="form-control" name="email" value="" placeholder="Email Address">
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                <input id="password" type="password" class="form-control" name="password" value="" placeholder="Password">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
         <!-- MAIN -->
         <div class="container">
             <?php
