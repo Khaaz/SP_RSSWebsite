@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Class Autoload
+ */
 class Autoload {
     private static $_instance = null;
 
@@ -30,7 +33,7 @@ class Autoload {
     private static function _autoload($class) {
         global $rep;
         $filename = $class.'.php';
-        $dir =array('Models/','./','Configs/','Controllers/', 'DAL/', 'DAL/Class/', 'DAL/Gateway/','DAL/Factory/');
+        $dir =array('./', 'Models/', 'Utility/', 'Controllers/', 'DAL/', 'DAL/Class/', 'DAL/Gateway/','DAL/Factory/');
         foreach ($dir as $d){
             $file=$rep.$d.$filename;
             if (file_exists($file))
@@ -41,6 +44,5 @@ class Autoload {
 
     }
 }
-
 
 ?>

@@ -1,24 +1,51 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: khaaz
- * Date: 12/4/18
- * Time: 11:26 PM
- */
 
+/**
+ * Class News
+ */
 class News {
 
-    public $url;
-    public $titre;
-    private $siteProvenance;
+    private $url;
+    private $title;
+    private $website;
     private $date;
 
-    public function __construct(String $url, String $titre, String $siteProvenance, String $date) {
+    public function __construct(string $url, string $title, string $website, string $date) {
         $this->url = $url;
-        $this->titre =$titre;
-        $this->siteProvenance =$siteProvenance;
-        $this->date =$date;
-
+        $this->title = $title;
+        $this->website = $website;
+        $this->date = $date;
     }
 
+    /**
+     * @return string
+     */
+    public function getUrl(): string
+    {
+        return $this->url;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTitle(): string
+    {
+        return $this->title;
+    }
+
+    /**
+     * @return string
+     */
+    public function getWebsite(): string
+    {
+        return $this->website;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDate(): string
+    {
+        return $this->date;
+    }
 }

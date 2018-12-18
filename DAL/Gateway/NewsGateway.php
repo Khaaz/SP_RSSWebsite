@@ -1,11 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: khaaz
- * Date: 12/4/18
- * Time: 11:26 PM
- */
 
+/**
+ * Class NewsGateway
+ */
 class NewsGateway {
 
     private $con;
@@ -15,23 +12,29 @@ class NewsGateway {
         $this->con = new Connection($BASE, $LOGIN, $PWD);
     }
 
-    public function getNews(int $page) : Array {
+    /**
+     * Get the news from the DB in function of the page in param
+     *
+     * @param int $page
+     * @return array
+     */
+    public function getNews(int $page) : array {
         global $NEWSPERPAGE;
         $query = "SELECT * FROM TNews ORDER BY Date DESC LIMIT :news,$NEWSPERPAGE;";
-        $allNews = [];
 
         $results = $this->con->getResults($query, array(
             ':news' => array($page, PDO::PARAM_INT)
         ));
 
-        foreach($results as $res){
-            $N = new News($res["Url"], $res["Title"], $res["Website"], $res["Date"]);
-            $allNews[] = $N;
-        }
-
-        return $allNews;
+        return NewsFactory::createNews($results);
     }
-    public function getTotNews() : Array {
+
+    /**
+     * Get count of news in the DB
+     *
+     * @return array
+     */
+    public function getTotNews() : array {
         $query = "SELECT count(*) FROM TNews;";
         $ret = [];
         $results = $this->con->getResults($query);
@@ -42,6 +45,4 @@ class NewsGateway {
 
         return $ret;
     }
-
-
 }

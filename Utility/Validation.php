@@ -1,11 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * Admin: lobellec
- * Date: 15/11/18
- * Time: 10:24
- */
 
+/**
+ * Class Validation
+ */
 class Validation {
 
     public static function Valid_page(int $page) : bool {

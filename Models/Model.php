@@ -2,10 +2,10 @@
 
 /**
  * Default model: does not implement IActor
- * 
- * Class ModelUser
+ *
+ * Class Model
  */
-class ModelUser {
+class Model {
     /**
      * Get the news to show regarding the page passed in param
      *

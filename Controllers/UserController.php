@@ -2,7 +2,7 @@
 
 /**
  * Created by PhpStorm.
- * User: khaaz
+ * Admin: khaaz
  * Date: 12/4/18
  * Time: 11:27 PM
  */
@@ -11,32 +11,19 @@ class UserController {
     function __construct() {
     }
 
-    function execute() {
-        global $REP, $VIEWS;
-        try {
-            $action = $_REQUEST['action'];
+    function execute($action, $REP, $VIEWS) {
 
-            switch ($action) {
-                case null:
-                    $this->base($REP, $VIEWS);
-                    break;
-                case 'click':
-                    $this->onClick($REP, $VIEWS);
-                    break;
-                case 'admin':
-                    echo "WTf";
-                    $this->admin($REP, $VIEWS);
-                    break;
-                default:
-                    $this->base($REP, $VIEWS);
-            }
-        } catch(PDOException $e) {
-            $ERRORS[] =	"DataBase error";
-            require ($REP.$VIEWS['error']);
-        } catch (Exception $e) {
-            $ERRORS[] =	"Unexpected error";
-            require ($REP.$VIEWS['error']);
+        $actor = ModelAdmin::isActor();
+
+        switch ($action) {
+            case 'connect':
+                $this->onConnect($REP, $VIEWS);
+                break;
+            case null:
+            default:
+                $this->base($REP, $VIEWS);
         }
+
     }
 
     function base($REP, $VIEWS) {
@@ -51,22 +38,23 @@ class UserController {
         //    $page = 1;
         //}
 
-        $TOTNEWS = Model::getTotalNews();
-        $TOTPAGE = ceil($TOTNEWS / $NEWSPERPAGE);
+        //$TOTNEWS = Model::getTotalNews();
+        //$TOTPAGE = ceil($TOTNEWS / $NEWSPERPAGE);
 
-        if ($CURPAGE > $TOTPAGE) {
-            $CURPAGE = 1;
-        }
+        //if ($CURPAGE > $TOTPAGE) {
+        //    $CURPAGE = 1;
+        //}
 
-        $NEWS = Model::getNews($CURPAGE * $NEWSPERPAGE - $NEWSPERPAGE);
+        //$NEWS = Model::getNews($CURPAGE * $NEWSPERPAGE - $NEWSPERPAGE);
         require ($REP.$VIEWS['base']);
     }
 
-    function onClick() {
+    function onConnect($REP, $VIEWS) {
+        $usr = $_POST['login'];
+        $pwd = $_POST['password'];
 
-    }
-
-    function admin($REP, $VIEWS) {
-        require ($REP.$VIEWS['admin']);
+        if (!ModelAdmin::connection($usr, $pwd)) {
+            echo 'lol';
+        }
     }
 }
