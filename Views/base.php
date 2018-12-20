@@ -35,7 +35,7 @@
 
             if (isset($ADMIN)) {
                 if (isset($FAILCON) && $FAILCON) {
-                    echo '<form id="signin" class="masthead row col-12" role="form">';
+                    echo '<form id="signin" action="index.php?action=connect" class="masthead row col-12" role="form" method="post">';
                     echo '<div class="input-group">';
                     echo '<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>';
                     echo '<input id="username" type="text" class="form-control" name="username" value="" placeholder="Invalid Username">';
@@ -52,7 +52,7 @@
                 }
 
             } else {
-                echo '<form id="signin" class="masthead row col-12" role="form">';
+                echo '<form id="signin" action="index.php?action=connect" class="masthead row col-12" role="form">';
                 echo '<div class="input-group">';
                 echo '<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>';
                 echo '<input id="username" type="text" class="form-control" name="username" value="" placeholder="Username">';
@@ -68,7 +68,12 @@
 
         <!-- MAIN -->
         <div class="container">
+            <!-- Print all news -->
             <?php
+            if (!isset($NEWS)) {
+                return;
+            }
+
             foreach ($NEWS as $n) {
                 echo '<div class="row row-striped">';
                 echo '<div class="col-2 text-right">';
@@ -76,7 +81,7 @@
                 echo '<h2>OCT</h2>';
                 echo '</div>';
                 echo '<div class="col-10">';
-                echo "<h3 class='text-uppercase'><strong>$n->titre</strong></h3>";
+                echo "<h3 class='text-uppercase'><strong>".$n->getTitle()."</strong></h3>";
                 echo '<ul class="list-inline">';
                 echo '<li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Friday</li>';
                 echo '<li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 2:30 PM - 4:00 PM</li>';
@@ -87,6 +92,7 @@
                 echo '</div>';
             }
             ?>
+            <!-- Print navigator -->
             <nav class="row mx-auto p-5 w-100" aria-label="Navigation">
                 <ul class="pagination mx-auto">
                     <?php

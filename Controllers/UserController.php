@@ -38,17 +38,17 @@ class UserController {
         //    $page = 1;
         //}
 
-        //$TOTNEWS = Model::getTotalNews();
-        //$TOTPAGE = ceil($TOTNEWS / $NEWSPERPAGE);
+        $TOTNEWS = Model::getTotalNews();
+        $TOTPAGE = ceil($TOTNEWS / $NEWSPERPAGE);
 
-        //if ($CURPAGE > $TOTPAGE) {
-        //    $CURPAGE = 1;
-        //}
+        if ($CURPAGE > $TOTPAGE) {
+            $CURPAGE = 1;
+        }
 
         $ADMIN = $actor;
 
 
-        //$NEWS = Model::getNews($CURPAGE * $NEWSPERPAGE - $NEWSPERPAGE);
+        $NEWS = Model::getNews($CURPAGE * $NEWSPERPAGE - $NEWSPERPAGE);
         require ($REP.$VIEWS['base']);
     }
 

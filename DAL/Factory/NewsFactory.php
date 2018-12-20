@@ -30,7 +30,7 @@ class NewsFactory {
         $allNews = [];
 
         foreach($data as $d){
-            $allUsr[] = NewsFactory::createOneNews($d);
+            $allNews[] = NewsFactory::createOneNews($d);
         }
 
         return $allNews;

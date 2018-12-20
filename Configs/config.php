@@ -4,7 +4,7 @@
 $REP=__DIR__.'/../';
 
 // Get data from config.json instead of hardcoded values
-$string = file_get_contents("./config.json");
+$string = file_get_contents("./Configs/config.json");
 $json = json_decode($string, true);
 
 $BASE = $json['db'];
