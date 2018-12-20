@@ -34,7 +34,9 @@
         <?php
 
             if (isset($ADMIN)) {
+                var_dump($FAILCON);
                 if (isset($FAILCON) && $FAILCON) {
+
                     echo '<form id="signin" action="index.php?action=connect" class="masthead row col-12" role="form" method="post">';
                     echo '<div class="input-group">';
                     echo '<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>';
@@ -52,7 +54,7 @@
                 }
 
             } else {
-                echo '<form id="signin" action="index.php?action=connect" class="masthead row col-12" role="form">';
+                echo '<form id="signin" action="index.php?action=connect" class="masthead row col-12" role="form" method="post">';
                 echo '<div class="input-group">';
                 echo '<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>';
                 echo '<input id="username" type="text" class="form-control" name="username" value="" placeholder="Username">';

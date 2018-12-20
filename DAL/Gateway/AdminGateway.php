@@ -42,8 +42,9 @@ class AdminGateway {
             ':username' => array($login, PDO::PARAM_STR),
         ));
 
-        if (sizeof($results) > 0 && password_verify($pwd, $results['Password'])) {
-            return AdminFactory::createAdmins($results)[0];
+        if (sizeof($results) > 0 && password_verify($pwd, $results[0]['Password'])) {
+            var_dump($results);
+            return (AdminFactory::createAdmins($results))[0];
         }
 
         return null;

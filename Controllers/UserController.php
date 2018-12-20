@@ -13,20 +13,19 @@ class UserController {
 
     function execute($action, $REP, $VIEWS) {
 
-        $actor = ModelAdmin::isActor();
-
         switch ($action) {
             case 'connect':
                 $this->onConnect($REP, $VIEWS);
                 break;
             case null:
             default:
-                $this->base($actor, $REP, $VIEWS);
+                $actor = ModelAdmin::isActor();
+                $this->base($actor, $REP, $VIEWS, false);
         }
 
     }
 
-    function base($actor, $REP, $VIEWS) {
+    function base($actor, $REP, $VIEWS, $failed) {
         global $NEWSPERPAGE;
         $CURPAGE = $_GET['page'];
 
@@ -47,7 +46,7 @@ class UserController {
 
         $ADMIN = $actor;
 
-
+        $FAILCON = $failed;
         $NEWS = Model::getNews($CURPAGE * $NEWSPERPAGE - $NEWSPERPAGE);
         require ($REP.$VIEWS['base']);
     }
@@ -56,13 +55,14 @@ class UserController {
         $usr = $_POST['username'];
         $pwd = $_POST['password'];
 
-        // if ADMIN == NULL - show error message
+        var_dump($usr);
+        var_dump($pwd);
+
         $ADMIN = ModelAdmin::connection($usr, $pwd);
 
-        if (!$ADMIN) {
-            $FAILCON = true;
-        }
+        $FAILCON = $ADMIN ? false : true;
 
-        require ($REP.$VIEWS['base']);
+        $this->base($ADMIN, $REP, $VIEWS, $FAILCON);
+        //require ($REP.$VIEWS['base']);
     }
 }
