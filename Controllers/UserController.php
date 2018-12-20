@@ -55,14 +55,11 @@ class UserController {
         $usr = $_POST['username'];
         $pwd = $_POST['password'];
 
-        var_dump($usr);
-        var_dump($pwd);
-
         $ADMIN = ModelAdmin::connection($usr, $pwd);
 
         $FAILCON = $ADMIN ? false : true;
 
-        $this->base($ADMIN, $REP, $VIEWS, $FAILCON);
+        $this->base(true, $REP, $VIEWS, $FAILCON);
         //require ($REP.$VIEWS['base']);
     }
 }

@@ -8,10 +8,10 @@ class AdminController {
     }
 
     function execute($action, $actor, $REP, $VIEWS) {
-
+        var_dump($action);
         switch ($action) {
             case 'admin':
-                $this->baseAdmin($REP, $VIEWS);
+                $this->baseAdmin($actor, $REP, $VIEWS);
                 break;
             case 'disconnect':
                 $this->onDisconnect($REP, $VIEWS);
@@ -24,11 +24,11 @@ class AdminController {
                 break;
             case null:
             default:
-                $this->baseAdmin($REP, $VIEWS);
+                $this->baseAdmin($actor, $REP, $VIEWS);
         }
     }
 
-    function baseAdmin($REP, $VIEWS) {
+    function baseAdmin($actor, $REP, $VIEWS) {
         require($REP.$VIEWS['admin']);
     }
 

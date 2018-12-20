@@ -43,7 +43,6 @@ class AdminGateway {
         ));
 
         if (sizeof($results) > 0 && password_verify($pwd, $results[0]['Password'])) {
-            var_dump($results);
             return (AdminFactory::createAdmins($results))[0];
         }
 

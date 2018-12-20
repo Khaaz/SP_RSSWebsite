@@ -27,7 +27,7 @@ class FrontController
         try {
             $action = $_REQUEST['action'];
 
-            $actor = array_search($action, $this->actions);
+            $actor = $this->arraySearch($this->actions, $action);
 
             if ($actor) {
                 // dynamically create the model and the controller;
@@ -61,5 +61,9 @@ class FrontController
             require ($REP.$VIEWS['error']);
 
         }
+    }
+
+    function arraySearch($array, $key) {
+        foreach 
     }
 }
