@@ -8,7 +8,6 @@ class AdminController {
     }
 
     function execute($action, $actor, $REP, $VIEWS) {
-        var_dump($action);
         switch ($action) {
             case 'admin':
                 $this->baseAdmin($actor, $REP, $VIEWS);
@@ -16,11 +15,11 @@ class AdminController {
             case 'disconnect':
                 $this->onDisconnect($REP, $VIEWS);
                 break;
-            case 'addNews':
-                $this->onAddNews($REP, $VIEWS);
+            case 'addRss':
+                $this->onAddRss($REP, $VIEWS);
                 break;
-            case 'delNews':
-                $this->onDelNews($REP, $VIEWS);
+            case 'delRss':
+                $this->onDelRss($REP, $VIEWS);
                 break;
             case null:
             default:
@@ -34,15 +33,26 @@ class AdminController {
 
     public function onDisconnect($REP, $VIEWS) {
         ModelAdmin::disconnection();
+
+        //$host  = $_SERVER['HTTP_HOST'];
+        // redirects to base index.php
+        header("Location: index.php");
     }
 
-    public function onAddNews($REP, $VIEWS) {
-        $usr = $_POST['RssUrl'];
-        $pwd = $_POST['WebsiteName'];
-        $pwd = $_POST['WebsiteUrl'];
+    public function onAddRss($REP, $VIEWS) {
+        $url = $_POST['RssUrl'];
+        $name = $_POST['WebsiteName'];
+        $website = $_POST['WebsiteUrl'];
+
+        // verif validity
+
+        $rss = new Rss($url, $name, $website);
+
+        ModelAdmin::addRSS($rss);
+        require($REP.$VIEWS['admin']);
     }
 
-    public function onDelNews($REP, $VIEWS) {
+    public function onDelRss($REP, $VIEWS) {
 
     }
 }

@@ -1,11 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * Admin: khaaz
- * Date: 12/13/18
- * Time: 10:17 AM
- */
 
+/**
+ * Class RssGateway
+ */
 class RssGateway {
 
     private $con;

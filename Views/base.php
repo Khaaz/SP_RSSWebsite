@@ -48,8 +48,9 @@
                     echo '<button type="submit" class="btn btn-primary">Login</button>';
                     echo '</form>';
                 } else {
-                    // show here login thing
+                    // show here login thing + deconnect button
                     echo 'CONNECTED';
+                    echo '<a href="index.php?action=disconnect">Disconnect</a>';
                 }
 
             } else {

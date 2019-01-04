@@ -37,30 +37,30 @@
 
     <div class="container row mx-auto p-5">
         <div class="wrap-contact2 row mx-auto">
-            <form class="contact2-form validate-form">
+            <form action="index.php?action=addRss" method="post" class="contact2-form validate-form">
 					<span class="contact2-form-title">
                         Add News
 					</span>
 
                 <div class="wrap-input2 validate-input" data-validate="Field is required">
-                    <input class="input2" type="text" name="RssUrl">
+                    <input class="input2" type="text" value="" name="RssUrl">
                     <span class="focus-input2" data-placeholder="Rss Url"></span>
                 </div>
 
                 <div class="wrap-input2 validate-input" data-validate="Field is required">
-                    <input class="input2" type="text" name="WebsiteName">
+                    <input class="input2" type="text" value="" name="WebsiteName">
                     <span class="focus-input2" data-placeholder="Website Name"></span>
                 </div>
 
                 <div class="wrap-input2 validate-input" data-validate="Field is required">
-                    <input class="input2" type="text" name="WebsiteUrl">
+                    <input class="input2" type="text" value="" name="WebsiteUrl">
                     <span class="focus-input2" data-placeholder="Website Url"></span>
                 </div>
 
                 <div class="container-contact2-form-btn">
                     <div class="wrap-contact2-form-btn">
                         <div class="contact2-form-bgbtn"></div>
-                        <button class="contact2-form-btn">
+                        <button type="submit" class="contact2-form-btn">
                             Insert Your News
                         </button>
                     </div>

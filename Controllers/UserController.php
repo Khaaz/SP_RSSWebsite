@@ -1,12 +1,8 @@
 <?php
 
 /**
- * Created by PhpStorm.
- * Admin: khaaz
- * Date: 12/4/18
- * Time: 11:27 PM
+ * Class UserController
  */
-
 class UserController {
     function __construct() {
     }
@@ -14,6 +10,9 @@ class UserController {
     function execute($action, $REP, $VIEWS) {
 
         switch ($action) {
+            case 'click':
+                $this->onClick($REP, $VIEWS);
+                break;
             case 'connect':
                 $this->onConnect($REP, $VIEWS);
                 break;
@@ -51,6 +50,10 @@ class UserController {
         require ($REP.$VIEWS['base']);
     }
 
+    function onClick($REP, $VIEWS) {
+
+    }
+
     function onConnect($REP, $VIEWS) {
         $usr = $_POST['username'];
         $pwd = $_POST['password'];
@@ -58,7 +61,7 @@ class UserController {
         $ADMIN = ModelAdmin::connection($usr, $pwd);
 
         $FAILCON = $ADMIN ? false : true;
-        echo "wat";
+
         $this->base(true, $REP, $VIEWS, $FAILCON);
         //require ($REP.$VIEWS['base']);
     }

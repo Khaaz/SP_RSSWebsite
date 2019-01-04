@@ -1,11 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * Admin: khaaz
- * Date: 12/13/18
- * Time: 10:06 AM
- */
 
+/**
+ * Class FrontController
+ */
 class FrontController
 {
     private $actions;
@@ -13,7 +10,7 @@ class FrontController
     public function __construct() {
         session_start();
         $this->actions = array(
-            'Admin' => array('disconnect', 'admin', 'addRSS', 'delRSS'),
+            'Admin' => array('disconnect', 'admin', 'addRss', 'delRSS'),
         );
 
         $this->execute();
@@ -28,7 +25,6 @@ class FrontController
             $action = $_REQUEST['action'];
 
             $actor = $this->arraySearch($this->actions, $action);
-            echo ($actor);
 
             if ($actor) {
                 // dynamically create the model and the controller;
@@ -36,6 +32,7 @@ class FrontController
                 $mdl = 'Model'.$actor;
 
                 $actorObj = $mdl::isActor();
+
                 if ($actorObj != null) {
                     $ctrl = $actor.'Controller';
                     $control = new $ctrl();
@@ -66,7 +63,7 @@ class FrontController
 
     function arraySearch($array, $key) {
         foreach($array as $k => $v) {
-            if (/*!is_numeric($k) && */in_array($v, $key)) {
+            if (/*!is_numeric($k) && */in_array($key, $v)) {
                 return $k;
             }
         }

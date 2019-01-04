@@ -53,7 +53,9 @@ class ModelAdmin implements IActor {
         return null;
     }
 
-    public static function addRSS() {
-        $test = 1;
+    public static function addRSS(Rss $rss) {
+        $gw = new RssGateway();
+
+        $gw->addRSS($rss);
     }
 }
