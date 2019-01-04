@@ -35,6 +35,13 @@
         </div>
     </header>
 
+    <?php
+        if (isset($ADMIN)) {
+            echo 'CONNECTED';
+            echo '<a href="index.php?action=disconnect">Disconnect</a>';
+        }
+    ?>
+
     <div class="container row mx-auto p-5">
         <div class="wrap-contact2 row mx-auto">
             <form action="index.php?action=addRss" method="post" class="contact2-form validate-form">

@@ -19,10 +19,10 @@ class AdminController {
                 $this->onDisconnect($REP, $VIEWS);
                 break;
             case 'addRss':
-                $this->onAddRss($REP, $VIEWS);
+                $this->onAddRss($actor, $REP, $VIEWS);
                 break;
             case 'delRss':
-                $this->onDelRss($REP, $VIEWS);
+                $this->onDelRss($actor, $REP, $VIEWS);
                 break;
             case null:
             default:
@@ -31,6 +31,7 @@ class AdminController {
     }
 
     function baseAdmin($actor, $REP, $VIEWS) {
+        $ADMIN = $actor;
         require($REP.$VIEWS['admin']);
     }
 
@@ -42,7 +43,9 @@ class AdminController {
         header("Location: index.php");
     }
 
-    public function onAddRss($REP, $VIEWS) {
+    public function onAddRss($actor, $REP, $VIEWS) {
+        $ADMIN = $actor;
+
         $url = $_POST['RssUrl'];
         $name = $_POST['WebsiteName'];
         $website = $_POST['WebsiteUrl'];
@@ -55,7 +58,8 @@ class AdminController {
         require($REP.$VIEWS['admin']);
     }
 
-    public function onDelRss($REP, $VIEWS) {
-
+    public function onDelRss($actor, $REP, $VIEWS) {
+        $ADMIN = $actor;
+        require($REP.$VIEWS['admin']);
     }
 }
