@@ -54,6 +54,6 @@ class ModelAdmin implements IActor {
     }
 
     public static function addRSS() {
-
+        $test = 1;
     }
 }

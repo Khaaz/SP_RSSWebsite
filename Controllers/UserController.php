@@ -58,7 +58,7 @@ class UserController {
         $ADMIN = ModelAdmin::connection($usr, $pwd);
 
         $FAILCON = $ADMIN ? false : true;
-
+        echo "wat";
         $this->base(true, $REP, $VIEWS, $FAILCON);
         //require ($REP.$VIEWS['base']);
     }

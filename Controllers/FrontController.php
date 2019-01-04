@@ -28,6 +28,7 @@ class FrontController
             $action = $_REQUEST['action'];
 
             $actor = $this->arraySearch($this->actions, $action);
+            echo ($actor);
 
             if ($actor) {
                 // dynamically create the model and the controller;
@@ -64,6 +65,11 @@ class FrontController
     }
 
     function arraySearch($array, $key) {
-        foreach 
+        foreach($array as $k => $v) {
+            if (/*!is_numeric($k) && */in_array($v, $key)) {
+                return $k;
+            }
+        }
+        return null;
     }
 }

@@ -6,7 +6,6 @@
     require_once(__DIR__ . '/Utility/Autoload.php');
     Autoload::charger();
 
-    // require 'script.php';
+    //require 'script.php';
     $cont = new FrontController();
-
 ?>
