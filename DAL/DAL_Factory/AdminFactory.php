@@ -1,11 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: khaaz
- * Date: 12/13/18
- * Time: 3:04 PM
- */
+namespace DAL_Factory;
 
+/**
+ * DAL_Class AdminFactory
+ * @package DAL_Factory
+ */
 class AdminFactory {
 
     /**
@@ -14,8 +13,8 @@ class AdminFactory {
      * @param $data
      * @return Admin
      */
-    public static function createOneAdmin($data) : Admin {
-        return new Admin(
+    public static function createOneAdmin($data) : \DAL_Class\Admin {
+        return new \DAL_Class\Admin(
             $data["Username"],
             $data["Password"],
             $data["Name"],

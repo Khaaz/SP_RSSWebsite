@@ -1,7 +1,12 @@
 <?php
 
+namespace DAL;
+
+use PDO;
+
 /**
- * Class Connection extends PDO
+ * DAL_Class Connection extends PDO
+ * @package DAL
  */
 class Connection extends PDO {
     private $stmt;

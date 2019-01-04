@@ -1,7 +1,12 @@
 <?php
 
+namespace DAL_Gateway;
+
+use PDO;
+
 /**
- * Class RssGateway
+ * DAL_Class RssGateway
+ * @package DAL_Gateway
  */
 class RssGateway {
 
@@ -9,16 +14,16 @@ class RssGateway {
 
     public function __construct() {
         global $BASE, $LOGIN, $PWD;
-        $this->con = new Connection($BASE, $LOGIN, $PWD);
+        $this->con = new \DAL\Connection($BASE, $LOGIN, $PWD);
     }
 
     /**
      * Add a RSS feed in DB
      *
-     * @param Rss $rss
+     * @param \DAL_Class\Rss $rss
      * @return bool
      */
-    public function addRSS(Rss $rss) : bool {
+    public function addRSS(\DAL_Class\Rss $rss) : bool {
         $query = "INSERT INTO TRss VALUES(:RssUrl, :WebsiteName, :SiteUrl);";
         return $this->con->executeQuery($query, array(
             ':RssUrl' => array($rss->getRssUrl(), PDO::PARAM_STR),
@@ -32,7 +37,7 @@ class RssGateway {
      * @param string $RssUrl
      * @return bool
      */
-    public function removeRss(string $RssUrl) : bool {
+    public function delRSS(string $RssUrl) : bool {
         $query = "DELETE FROM TRss WHERE RssUrl=:RssUrl;";
         return $this->con->executeQuery($query, array(
             ':RssUrl' => array($RssUrl, PDO::PARAM_STR),

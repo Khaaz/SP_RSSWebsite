@@ -1,7 +1,10 @@
 <?php
 
+namespace DAL_Class;
+
 /**
- * Class Rss
+ * DAL_Class Rss
+ * @package DAL_Class
  */
 class Rss {
     private $RssUrl;

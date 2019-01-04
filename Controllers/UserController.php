@@ -1,14 +1,16 @@
 <?php
 
+namespace Controllers;
+
 /**
- * Class UserController
+ * DAL_Class UserController
+ * @package Controllers
  */
 class UserController {
     function __construct() {
     }
 
     function execute($action, $REP, $VIEWS) {
-
         switch ($action) {
             case 'click':
                 $this->onClick($REP, $VIEWS);
@@ -18,7 +20,7 @@ class UserController {
                 break;
             case null:
             default:
-                $actor = ModelAdmin::isActor();
+                $actor = \Models\ModelAdmin::isActor();
                 $this->base($actor, $REP, $VIEWS, false);
         }
 
@@ -36,7 +38,7 @@ class UserController {
         //    $page = 1;
         //}
 
-        $TOTNEWS = Model::getTotalNews();
+        $TOTNEWS = \Models\Model::getTotalNews();
         $TOTPAGE = ceil($TOTNEWS / $NEWSPERPAGE);
 
         if ($CURPAGE > $TOTPAGE) {
@@ -46,7 +48,7 @@ class UserController {
         $ADMIN = $actor;
 
         $FAILCON = $failed;
-        $NEWS = Model::getNews($CURPAGE * $NEWSPERPAGE - $NEWSPERPAGE);
+        $NEWS = \Models\Model::getNews($CURPAGE * $NEWSPERPAGE - $NEWSPERPAGE);
         require ($REP.$VIEWS['base']);
     }
 
@@ -58,7 +60,7 @@ class UserController {
         $usr = $_POST['username'];
         $pwd = $_POST['password'];
 
-        $ADMIN = ModelAdmin::connection($usr, $pwd);
+        $ADMIN = \Models\ModelAdmin::connection($usr, $pwd);
 
         $FAILCON = $ADMIN ? false : true;
 

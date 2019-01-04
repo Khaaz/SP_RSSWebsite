@@ -1,7 +1,10 @@
 <?php
 
+namespace Models;
+
 /**
- * Class ModelAdmin
+ * DAL_Class ModelAdmin
+ * @package Models
  */
 class ModelAdmin implements IActor {
 
@@ -10,10 +13,10 @@ class ModelAdmin implements IActor {
      *
      * @param string $login
      * @param string $pwd
-     * @return Admin || null
+     * @return \DAL_Class\Admin || null
      */
     public static function connection(string $login, string $pwd) {
-        $gw = new AdminGateway();
+        $gw = new \DAL_Gateway\AdminGateway();
         $admin = $gw->getIfAdmin($login, $pwd);
 
         if ($admin) {
@@ -35,7 +38,7 @@ class ModelAdmin implements IActor {
 
     /**
      * Whether the user is an admin or not.
-     * @return Admin || NULL
+     * @return \DAL_Class\Admin || NULL
      */
     public static function isActor() {
         if (isset($_SESSION['role'])
@@ -44,7 +47,7 @@ class ModelAdmin implements IActor {
 
             // clean params
 
-            $gw = new AdminGateway();
+            $gw = new \DAL_Gateway\AdminGateway();
             $a = $gw->getAdmin($_SESSION['login']);
 
             return sizeof($a) > 0 ? $a[0] : null;
@@ -53,9 +56,15 @@ class ModelAdmin implements IActor {
         return null;
     }
 
-    public static function addRSS(Rss $rss) {
-        $gw = new RssGateway();
+    public static function addRSS(\DAL_Class\Rss $rss) {
+        $gw = new \DAL_Gateway\RssGateway();
 
         $gw->addRSS($rss);
+    }
+
+    public static function delRSS(string $rssUrl) {
+        $gw = new \DAL_Gateway\RssGateway();
+
+        $gw->delRSS($rssUrl);
     }
 }

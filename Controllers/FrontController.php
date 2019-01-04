@@ -1,7 +1,13 @@
 <?php
 
+namespace Controllers;
+
+use PDOException;
+use Exception;
+
 /**
- * Class FrontController
+ * DAL_Class FrontController
+ * @package Controllers
  */
 class FrontController
 {
@@ -29,12 +35,12 @@ class FrontController
             if ($actor) {
                 // dynamically create the model and the controller;
 
-                $mdl = 'Model'.$actor;
+                $mdl = '\Models\Model'.$actor;
 
                 $actorObj = $mdl::isActor();
 
                 if ($actorObj != null) {
-                    $ctrl = $actor.'Controller';
+                    $ctrl = '\Controllers\\'.$actor.'Controller';
                     $control = new $ctrl();
 
                     $control->execute($action, $actorObj, $REP, $VIEWS);

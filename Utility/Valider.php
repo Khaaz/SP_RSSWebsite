@@ -1,7 +1,10 @@
 <?php
 
+namespace Utility;
+
 /**
- * Class Valider
+ * DAL_Class Valider
+ * @package Utility
  */
 class Valider {
 

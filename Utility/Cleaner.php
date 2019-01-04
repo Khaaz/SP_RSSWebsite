@@ -1,7 +1,10 @@
 <?php
 
+namespace Utility;
+
 /**
- * Class Cleaner
+ * DAL_Class Cleaner
+ * @package Utility
  */
 class Cleaner {
 

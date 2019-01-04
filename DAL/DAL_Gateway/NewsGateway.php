@@ -1,7 +1,12 @@
 <?php
 
+namespace DAL_Gateway;
+
+use PDO;
+
 /**
- * Class NewsGateway
+ * DAL_Class NewsGateway
+ * @package DAL_Gateway
  */
 class NewsGateway {
 
@@ -9,7 +14,7 @@ class NewsGateway {
 
     public function __construct() {
         global $BASE, $LOGIN, $PWD;
-        $this->con = new Connection($BASE, $LOGIN, $PWD);
+        $this->con = new \DAL\Connection($BASE, $LOGIN, $PWD);
     }
 
     /**
@@ -26,7 +31,7 @@ class NewsGateway {
             ':news' => array($page, PDO::PARAM_INT)
         ));
 
-        return NewsFactory::createNews($results);
+        return \DAL_Factory\NewsFactory::createNews($results);
     }
 
     /**

@@ -1,9 +1,12 @@
 <?php
 
+namespace Models;
+
 /**
  * Default model: does not implement IActor
  *
- * Class Model
+ * DAL_Class Model
+ * @package Models
  */
 class Model {
     /**
@@ -12,8 +15,8 @@ class Model {
      * @param int $page - page number
      * @return array
      */
-    static function getNews(int $page) : Array {
-        $gw = new NewsGateway();
+    public static function getNews(int $page) : array {
+        $gw = new \DAL_Gateway\NewsGateway();
         return $gw->getNews($page);
     }
 
@@ -22,8 +25,8 @@ class Model {
      *
      * @return int
      */
-    static function getTotalNews(): int {
-        $gw = new NewsGateway();
+    public static function getTotalNews(): int {
+        $gw = new \DAL_Gateway\NewsGateway();
         return $gw->getTotNews()[0];
     }
 }

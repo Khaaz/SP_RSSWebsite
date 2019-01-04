@@ -1,7 +1,10 @@
 <?php
 
+namespace DAL_Factory;
+
 /**
- * Class NewsFactory
+ * DAL_Class NewsFactory
+ * @package DAL_Factory
  */
 class NewsFactory {
 
@@ -11,8 +14,8 @@ class NewsFactory {
      * @param $data
      * @return News
      */
-    public static function createOneNews($data) : News {
-        return new News(
+    public static function createOneNews($data) : \DAL_Class\News {
+        return new \DAL_Class\News(
             $data["Url"],
             $data["Title"],
             $data["Website"],

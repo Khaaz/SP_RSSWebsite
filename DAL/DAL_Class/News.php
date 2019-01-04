@@ -1,7 +1,10 @@
 <?php
 
+namespace DAL_Class;
+
 /**
- * Class News
+ * DAL_Class News
+ * @package DAL_Class
  */
 class News {
 

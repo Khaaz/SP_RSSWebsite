@@ -1,7 +1,12 @@
 <?php
 
+namespace DAL_Gateway;
+
+use PDO;
+
 /**
- * Class AdminGateway
+ * DAL_Class AdminGateway
+ * @package DAL_Gateway
  */
 class AdminGateway {
 
@@ -9,7 +14,7 @@ class AdminGateway {
 
     public function __construct() {
         global $BASE, $LOGIN, $PWD;
-        $this->con = new Connection($BASE, $LOGIN, $PWD);
+        $this->con = new \DAL\Connection($BASE, $LOGIN, $PWD);
     }
 
     /**
@@ -24,7 +29,7 @@ class AdminGateway {
         $results = $this->con->getResults($query, array(
             ':username' => array($login, PDO::PARAM_STR),
         ));
-        return AdminFactory::createAdmins($results);
+        return \DAL_Factory\AdminFactory::createAdmins($results);
     }
 
     /**
@@ -33,7 +38,7 @@ class AdminGateway {
      *
      * @param string $login
      * @param string $pwd
-     * @return Admin | null
+     * @return \DAL_Class\Admin | null
      */
     public function getIfAdmin(string $login, string $pwd) {
         $query = "SELECT * FROM TUser WHERE Username=:username;";
@@ -43,7 +48,7 @@ class AdminGateway {
         ));
 
         if (sizeof($results) > 0 && password_verify($pwd, $results[0]['Password'])) {
-            return (AdminFactory::createAdmins($results))[0];
+            return (\DAL_Factory\AdminFactory::createAdmins($results))[0];
         }
 
         return null;
@@ -52,10 +57,10 @@ class AdminGateway {
     /**
      * Add an Admin in DB
      *
-     * @param Admin $admin
+     * @param \DAL_Class\Admin $admin
      * @return bool
      */
-    public function addAdmin(Admin $admin) : bool {
+    public function addAdmin(\DAL_Class\Admin $admin) : bool {
         $query = "INSERT INTO TUser VALUES(:Username, :Password, :Name, :Surname, :Mail);";
         return $this->con->executeQuery($query, array(
             ':Username' => array($admin->getUsername(), PDO::PARAM_STR),

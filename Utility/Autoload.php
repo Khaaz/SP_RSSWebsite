@@ -1,12 +1,12 @@
 <?php
 
-/**
- * Class Autoload
- */
-class Autoload {
+//prs0 compliant
+class Autoload
+{
     private static $_instance = null;
 
-    public static function charger() {
+    public static function charger()
+    {
         if(null !== self::$_instance) {
             throw new RuntimeException(sprintf('%s is already started', __CLASS__));
         }
@@ -19,7 +19,8 @@ class Autoload {
         }
     }
 
-    public static function shutDown() {
+    public static function shutDown()
+    {
         if(null !== self::$_instance) {
 
             if(!spl_autoload_unregister(array(self::$_instance, '_autoload'))) {
@@ -30,19 +31,25 @@ class Autoload {
         }
     }
 
-    private static function _autoload($class) {
-        global $rep;
-        $filename = $class.'.php';
-        $dir =array('./', 'Models/', 'Utility/', 'Controllers/', 'DAL/', 'DAL/Class/', 'DAL/Gateway/','DAL/Factory/');
-        foreach ($dir as $d){
-            $file=$rep.$d.$filename;
-            if (file_exists($file))
-            {
-                include $file;
-            }
+    private static function _autoload($className)
+    {
+
+        echo 	$className;
+        $folder = "./";
+        $className = ltrim($className, '\\');
+        $fileName  = '';
+        $namespace = '';
+        if ($lastNsPos = strripos($className, '\\')) {
+            $namespace = substr($className, 0, $lastNsPos);
+            $className = substr($className, $lastNsPos + 1);
+            $fileName  = str_replace('\\', DIRECTORY_SEPARATOR, $namespace) . DIRECTORY_SEPARATOR;
         }
+        $fileName .= str_replace('_', DIRECTORY_SEPARATOR, $className) . '.php';
+
+        include $folder . $fileName;
 
     }
 }
+
 
 ?>

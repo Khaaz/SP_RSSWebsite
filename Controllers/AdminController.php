@@ -1,7 +1,10 @@
 <?php
 
+namespace Controllers;
+
 /**
- * Class AdminController
+ * DAL_Class AdminController
+ * @package Controllers
  */
 class AdminController {
     public function __construct() {
@@ -32,7 +35,7 @@ class AdminController {
     }
 
     public function onDisconnect($REP, $VIEWS) {
-        ModelAdmin::disconnection();
+        \Models\ModelAdmin::disconnection();
 
         //$host  = $_SERVER['HTTP_HOST'];
         // redirects to base index.php
@@ -46,9 +49,9 @@ class AdminController {
 
         // verif validity
 
-        $rss = new Rss($url, $name, $website);
+        $rss = new \DAL\Rss($url, $name, $website);
 
-        ModelAdmin::addRSS($rss);
+        \Models\ModelAdmin::addRSS($rss);
         require($REP.$VIEWS['admin']);
     }
 

@@ -1,7 +1,10 @@
 <?php
 
+namespace DAL_Class;
+
 /**
- * Class Admin
+ * DAL_Class Admin
+ * @package DAL_Class
  */
 class Admin {
     private $username;
