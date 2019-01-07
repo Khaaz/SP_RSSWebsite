@@ -17,6 +17,14 @@ class ModelAdmin implements IActor {
      */
     public static function connection(string $login, string $pwd) {
         $gw = new \DAL_Gateway\AdminGateway();
+
+        if (!\Utility\Valider::Valid_login($login) || !\Utility\Valider::Valid_password($pwd)) {
+            return null;
+        }
+
+        $login = \Utility\Cleaner::Clean_login($login);
+        $pwd = \Utility\Cleaner::Clean_password($pwd);
+
         $admin = $gw->getIfAdmin($login, $pwd);
 
         if ($admin) {
@@ -46,10 +54,16 @@ class ModelAdmin implements IActor {
             && $_SESSION['role'] == 'admin'
             && isset($_SESSION['login'])) {
 
+            if (!\Utility\Valider::Valid_login($_SESSION['login'])) {
+                return null;
+            }
+
+            $login = \Utility\Cleaner::Clean_login($_SESSION['login']);
+
             // clean params
 
             $gw = new \DAL_Gateway\AdminGateway();
-            $a = $gw->getAdmin($_SESSION['login']);
+            $a = $gw->getAdmin($login);
 
             return sizeof($a) > 0 ? $a[0] : null;
         }
@@ -80,4 +94,16 @@ class ModelAdmin implements IActor {
 
         return $gw->delRSS($rssUrl);
     }
+
+    /**
+     * Get all RSS from the DB as RSS object
+     *
+     * @return array
+     */
+    public static function getRSS() : array {
+        $gw = new \DAL_Gateway\RssGateway();
+
+        return $gw->getRSS();
+    }
+
 }

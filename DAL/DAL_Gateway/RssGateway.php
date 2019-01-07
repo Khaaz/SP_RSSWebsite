@@ -50,6 +50,8 @@ class RssGateway {
      */
     public function getRSS() : array {
         $query = "SELECT * FROM TRss;";
-        return $this->con->getResults($query);
+
+        $result = $this->con->getResults($query);
+        return \DAL_Factory\RssFactory::createRss($result);
     }
 }

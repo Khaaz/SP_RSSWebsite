@@ -1,6 +1,5 @@
 <?php
 
-
     require_once(__DIR__.'/Configs/config.php');
 
     //require_once(__DIR__ . '/Utility/AutoloadOld.php');
@@ -28,5 +27,9 @@
     $myLibLoader->register();
 
     //require 'script.php';
-    $cont = new \Controllers\FrontController();
+
+    require "testparser.php";
+
+    //$cont = new \Controllers\FrontController();
+
 ?>

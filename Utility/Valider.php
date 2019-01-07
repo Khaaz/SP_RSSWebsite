@@ -38,6 +38,21 @@ class Valider {
         );
     }
 
+    public static function Valid_websiteName(string $str) : bool {
+        if (!isset($str)) {
+            return false;
+        }
+        $re = "/^[A-Za-z0-9\.]*$/";
+
+        return !!filter_var(
+            $str,
+            FILTER_VALIDATE_REGEXP,
+            array(
+                "options" => array("regexp" => $re)
+            )
+        );
+    }
+
     public static function Valid_page(int $page) : bool {
         if (!isset($page)) {
             return false;

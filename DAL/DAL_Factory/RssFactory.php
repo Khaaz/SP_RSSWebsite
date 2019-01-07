@@ -18,7 +18,7 @@ class RssFactory {
         return new \DAL_Class\Rss(
             $data["RssUrl"],
             $data["WebsiteName"],
-            $data["SiteName"]
+            $data["SiteUrl"]
         );
     }
 

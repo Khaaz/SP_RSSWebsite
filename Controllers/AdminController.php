@@ -50,9 +50,16 @@ class AdminController {
         $name = $_POST['WebsiteName'];
         $website = $_POST['WebsiteUrl'];
 
-        // verif validity
+        if (!\Utility\Valider::Valid_url($url) || !\Utility\Valider::Valid_websiteName($name) || !\Utility\Valider::Valid_url($website)) {
+            $this->baseAdmin($ADMIN, $REP, $VIEWS);
+            return;
+        };
 
-        $rss = new \DAL\Rss($url, $name, $website);
+        $url = \Utility\Cleaner::Clean_url($url);
+        $name = \Utility\Cleaner::Clean_websiteName($name);
+        $website = \Utility\Cleaner::Clean_url($website);
+
+        $rss = new \DAL_Class\Rss($url, $name, $website);
 
         \Models\ModelAdmin::addRSS($rss);
         require($REP.$VIEWS['admin']);

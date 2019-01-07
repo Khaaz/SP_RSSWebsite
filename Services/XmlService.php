@@ -23,7 +23,7 @@ class XmlService {
      * Function that runs everytime the RSS list needs to be updated
      */
     public function updateRssList() {
-        $rssList = \Models\ModelService::getRss();
+        $rssList = \Models\ModelAdmin::getRss();
 
         foreach($rssList as $rss) {
             $this->rssList[] = $rss->getRssUrl();
@@ -44,7 +44,6 @@ class XmlService {
             // Parse rss feed
             $this->parser->parse($rss);
             $result = $this->parser->getResult(); // result is an array of newsParsed
-
             // Create a list of News from parsed News
             $news = \DAL_Factory\NewsFactory::createNewsFromParsed($result);
 
@@ -53,6 +52,7 @@ class XmlService {
                 try {
                     \Models\ModelService::addNews($n);
                 } catch (PDOException $e) {
+                    echo $e;
                     // do nothing - means the news is already in the DB
                     // eventually log the error?
                 }

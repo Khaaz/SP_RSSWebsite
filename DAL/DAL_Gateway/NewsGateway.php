@@ -59,9 +59,10 @@ class NewsGateway {
      */
     public function addNews(\DAL_Class\News $news) : bool {
         $query = "INSERT INTO TNews VALUES(:Url, :Website, :Title, :Description, :Date);";
+        var_dump($news->getDate());
         return $this->con->executeQuery($query, array(
             ':Url' => array($news->getUrl(), PDO::PARAM_STR),
-            ':WebsiteN' => array($news->getWebsite(), PDO::PARAM_STR),
+            ':Website' => array($news->getWebsite(), PDO::PARAM_STR),
             ':Title' => array($news->getTitle(), PDO::PARAM_STR),
             ':Description' => array($news->getDescription(), PDO::PARAM_STR),
             ':Date' => array($news->getDate(), PDO::PARAM_STR),

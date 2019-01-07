@@ -23,6 +23,14 @@ class Cleaner {
         return filter_var($str, FILTER_SANITIZE_STRING);
     }
 
+    public static function Clean_websiteName(string $str) {
+        if (!isset($str)) {
+            return false;
+        }
+
+        return filter_var($str, FILTER_SANITIZE_STRING);
+    }
+
     public static function Clean_page(int $page) {
         if (!isset($page)) {
             return false;

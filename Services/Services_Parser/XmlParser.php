@@ -12,8 +12,12 @@ class XmlParser {
     private $result;
     private $depth;
 
+    private $curNews;
+    private $curAttribute;
+
     public function __construct() {
         $this->depth = 0;
+        $this->result = array();
     }
 
     public function getResult() {
@@ -41,33 +45,31 @@ class XmlParser {
             }
         }
 
-        $this->result = ob_get_contents();
+        ob_get_contents();
         ob_end_clean();
         fclose($fp);
         xml_parser_free($xml_parser);
     }
 
     private function startElement($parser, $name, $attrs) {
-        for ($i = 0; $i < $this -> depth; $i++) {
-            echo "  ";
+        if ($name == 'ITEM') {
+            $this->curNews = new NewsParsed();
         }
+        $this->curAttribute = $name;
+
         echo "<p style='color:red'> $name</p>\n";
-        $this -> depth++;
-        foreach($attrs as $attribute => $text) {
-            $this ->displayAttribute($attribute, $text);
-        }
-    }
-
-    private function displayAttribute($attribute, $text) {
-        for ($i = 0; $i < $this -> depth; $i++) {
-            echo "  ";
-        }
-
-        echo "A - $attribute = $text\n";
+        $this->depth++;
     }
 
     private function endElement($parser, $name) {
         $this->depth--;
+
+        if ($name == 'ITEM') {
+            $this->result[] = $this->curNews;
+            $this->curNews = null;
+        }
+        $this->curAttribute = null;
+
         echo "<p style='color:red'> $name</p>\n";
 
     }
@@ -76,11 +78,32 @@ class XmlParser {
         $data = trim($data);
 
         if (strlen($data) > 0) {
-            for ($i = 0; $i < $this -> depth; $i++) {
-                echo "  ";
+            if (!$this->curNews) {
+                return;
             }
-
-            echo 'T :'.$data."\n";
+            switch ($this->curAttribute) {
+                case 'LINK': {
+                    $this->curNews->setUrl($data);
+                    preg_match('/([a-zA-Z]*)/', $data, $matches);
+                    $this->curNews->setWebsite($matches[1]);
+                    break;
+                }
+                case 'TITLE': {
+                    $this->curNews->setTitle($data);
+                    break;
+                }
+                case 'DESCRIPTION': {
+                    $this->curNews->setDescription($data);
+                    break;
+                }
+                case 'PUBDATE': {
+                    $this->curNews->setDate($data);
+                    break;
+                }
+                default: {
+                    null;
+                }
+            }
         }
     }
 }
