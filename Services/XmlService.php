@@ -44,6 +44,7 @@ class XmlService {
             // Parse rss feed
             $this->parser->parse($rss);
             $result = $this->parser->getResult(); // result is an array of newsParsed
+
             // Create a list of News from parsed News
             $news = \DAL_Factory\NewsFactory::createNewsFromParsed($result);
 
@@ -52,7 +53,6 @@ class XmlService {
                 try {
                     \Models\ModelService::addNews($n);
                 } catch (PDOException $e) {
-                    echo $e;
                     // do nothing - means the news is already in the DB
                     // eventually log the error?
                 }

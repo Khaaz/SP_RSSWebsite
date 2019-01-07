@@ -84,8 +84,7 @@ class XmlParser {
             switch ($this->curAttribute) {
                 case 'LINK': {
                     $this->curNews->setUrl($data);
-                    preg_match('/([a-zA-Z]*)/', $data, $matches);
-                    $this->curNews->setWebsite($matches[1]);
+                    $this->curNews->setWebsite($data);
                     break;
                 }
                 case 'TITLE': {

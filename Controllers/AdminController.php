@@ -32,6 +32,9 @@ class AdminController {
 
     function baseAdmin($actor, $REP, $VIEWS) {
         $ADMIN = $actor;
+
+        $RSSLIST = \Models\ModelAdmin::getRSS();
+
         require($REP.$VIEWS['admin']);
     }
 
@@ -62,11 +65,19 @@ class AdminController {
         $rss = new \DAL_Class\Rss($url, $name, $website);
 
         \Models\ModelAdmin::addRSS($rss);
-        require($REP.$VIEWS['admin']);
+
+        $this->baseAdmin($actor, $REP, $VIEWS);
     }
 
     public function onDelRss($actor, $REP, $VIEWS) {
-        $ADMIN = $actor;
-        require($REP.$VIEWS['admin']);
+
+        $rssUrl = $_POST['rssList'];
+
+        if (\Utility\Valider::Valid_url($rssUrl)) {
+            $rssUrl = \Utility\Cleaner::Clean_url($rssUrl);
+            \Models\ModelAdmin::delRSS($rssUrl);
+        }
+
+        $this->baseAdmin($actor, $REP, $VIEWS);
     }
 }

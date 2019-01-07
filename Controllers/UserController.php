@@ -55,7 +55,14 @@ class UserController {
     }
 
     function onClick($REP, $VIEWS) {
+        $link = $_GET['newsUrl'];
 
+        if (!\Utility\Valider::Valid_url($link)) {
+            return;
+        }
+
+        $link = \Utility\Cleaner::Clean_url($link);
+        header("Location: $link");
     }
 
     function onConnect($REP, $VIEWS)

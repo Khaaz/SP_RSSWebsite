@@ -2,6 +2,8 @@
 
 namespace Services_Parser;
 
+use DateTime;
+
 /**
  * DAL_Class NewsParsed
  * @package Services_Parser
@@ -27,7 +29,8 @@ class NewsParsed {
      */
     public function setWebsite($website)
     {
-        $this->website = $website;
+        preg_match('/^(http(s)?:\/\/)?(www\.)?([a-zA-Z]*\.[a-z]{2,8})/', $website, $matches);
+        $this->website = $matches[4];
     }
 
     /**
@@ -35,7 +38,11 @@ class NewsParsed {
      */
     public function setTitle($title)
     {
-        $this->title = $title;
+        if ($this->title) {
+            $this->title = $this->title.$title;
+        } else {
+            $this->title = $title;
+        }
     }
 
     /**
@@ -43,14 +50,24 @@ class NewsParsed {
      */
     public function setDescription($description)
     {
-        $this->description = $description;
+        if ($this->description) {
+            $this->description = $this->description.$description;
+        } else {
+            $this->description = $description;
+        }
     }
 
     /**
      * @param mixed $date
+     * @throws
      */
     public function setDate($date)
     {
-        $this->date = $date;
+        try {
+            $published_date = new DateTime($date);
+        } catch (\Exception $e) {
+            $published_date = new DateTime('now');
+        }
+        $this->date = $published_date->format('Y-m-d  H:i:s');
     }
 }

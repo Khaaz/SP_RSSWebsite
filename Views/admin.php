@@ -68,7 +68,7 @@
                     <div class="wrap-contact2-form-btn">
                         <div class="contact2-form-bgbtn"></div>
                         <button type="submit" class="contact2-form-btn">
-                            Insert Your News
+                            Insert Your Rss
                         </button>
                     </div>
                 </div>
@@ -78,12 +78,19 @@
 
 
     <div class="dropdown">
-        <select name="htmlbox">
-                <option> optionUno </option>
-                <option> optionDos </option>
-                <option> optionTres </option>
-        </select>
-        <button class="btn-primary"> delete </button>
+        <form action="index.php?action=delRss" method="post">
+            <select name="rssList">
+                <?php
+                    if (!isset($RSSLIST)) {
+                        return;
+                    }
+                    foreach ($RSSLIST as $rss) {
+                        echo "<option value='".$rss->getRssUrl()."'>".$rss->getRssUrl()."</option>";
+                    }
+                ?>
+            </select>
+            <button type="submit" class="btn-primary">Delete</button>
+        </form>
     </div>
 
     <footer class="container row-1 w-100 h-100 p-3">

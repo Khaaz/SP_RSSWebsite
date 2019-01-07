@@ -28,8 +28,8 @@
 
     //require 'script.php';
 
-    require "testparser.php";
+    //require "testparser.php";
 
-    //$cont = new \Controllers\FrontController();
+    $cont = new \Controllers\FrontController();
 
 ?>

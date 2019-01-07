@@ -16,7 +16,7 @@ class FrontController
     public function __construct() {
         session_start();
         $this->actions = array(
-            'Admin' => array('disconnect', 'admin', 'addRss', 'delRSS'),
+            'Admin' => array('disconnect', 'admin', 'addRss', 'delRss'),
         );
 
         $this->execute();

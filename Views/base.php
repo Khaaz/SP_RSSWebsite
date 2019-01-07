@@ -81,15 +81,12 @@
             foreach ($NEWS as $n) {
                 echo '<div class="row row-striped">';
                 echo '<div class="col-2 text-right">';
-                echo '<h1 class="display-4"><span class="badge badge-secondary">27</span></h1>';
-                echo '<h2>OCT</h2>';
+                echo '<h3><span class="badge badge-secondary"> '.$n->getWebsite().' </span></h3>';
                 echo '</div>';
                 echo '<div class="col-10">';
-                echo "<h3 class='text-uppercase'><strong>".$n->getTitle()."</strong></h3>";
+                echo "<a href='index.php?action=click&newsUrl=".$n->getUrl()."' target='_blank'><h4 class='text-uppercase'><strong>".$n->getTitle()."</strong></h4></a>";
                 echo '<ul class="list-inline">';
-                echo '<li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Friday</li>';
-                echo '<li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 2:30 PM - 4:00 PM</li>';
-                echo '<li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> Room 4019</li>';
+                echo '<li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> '.$n->getDate().'</li>';
                 echo '</ul>';
                 echo '<p>'.$n->getDescription().'</p>';
                 echo '</div>';
