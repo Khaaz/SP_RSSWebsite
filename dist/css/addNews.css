@@ -54,6 +54,17 @@ a:hover {
 	color: #000000;
 }
 
+#usrconnected{
+  color:white;
+  transition: all 0.4s;
+}
+
+#usrconnected:hover{
+  color: red;
+  transition: all 0.4s;
+  border-bottom: 1px solid;
+}
+
 /*---------------------------------------------*/
 h1,h2,h3,h4,h5,h6 {
 	margin: 0px;
