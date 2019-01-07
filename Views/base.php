@@ -49,8 +49,10 @@
                     echo '</form>';
                 } else {
                     // show here login thing + deconnect button
-                    echo 'CONNECTED';
-                    echo '<a href="index.php?action=disconnect">Disconnect</a>';
+                    echo '<div class="container">';
+                    echo '<a id="usrconnected" class="row row-stripped" href="index.php?action=disconnect"> '.$ADMIN->getUsername().' </a>';
+                    echo '</div>';
+
                 }
 
             } else {

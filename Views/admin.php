@@ -11,6 +11,7 @@
     <title>RSS VIEW LIST</title>
 
     <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="./dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
@@ -37,8 +38,7 @@
 
     <?php
         if (isset($ADMIN)) {
-            echo 'CONNECTED';
-            echo '<a href="index.php?action=disconnect">Disconnect</a>';
+            echo '<a id="usrconnected" href="index.php?action=disconnect"> '.$ADMIN->getUsername().' </a>';
         }
     ?>
 
@@ -74,6 +74,16 @@
                 </div>
             </form>
         </div>
+    </div>
+
+
+    <div class="dropdown">
+        <select name="htmlbox">
+                <option> optionUno </option>
+                <option> optionDos </option>
+                <option> optionTres </option>
+        </select>
+        <button class="btn-primary"> delete </button>
     </div>
 
     <footer class="container row-1 w-100 h-100 p-3">
