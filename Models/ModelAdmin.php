@@ -38,6 +38,7 @@ class ModelAdmin implements IActor {
 
     /**
      * Whether the user is an admin or not.
+     *
      * @return \DAL_Class\Admin || NULL
      */
     public static function isActor() {
@@ -56,15 +57,27 @@ class ModelAdmin implements IActor {
         return null;
     }
 
-    public static function addRSS(\DAL_Class\Rss $rss) {
+    /**
+     * Add a RSS in the DB
+     *
+     * @param \DAL_Class\Rss $rss
+     * @return bool
+     */
+    public static function addRSS(\DAL_Class\Rss $rss) : bool {
         $gw = new \DAL_Gateway\RssGateway();
 
-        $gw->addRSS($rss);
+        return $gw->addRSS($rss);
     }
 
-    public static function delRSS(string $rssUrl) {
+    /**
+     * Delete a RSS from the DB
+     *
+     * @param string $rssUrl
+     * @return bool
+     */
+    public static function delRSS(string $rssUrl) : bool {
         $gw = new \DAL_Gateway\RssGateway();
 
-        $gw->delRSS($rssUrl);
+        return $gw->delRSS($rssUrl);
     }
 }

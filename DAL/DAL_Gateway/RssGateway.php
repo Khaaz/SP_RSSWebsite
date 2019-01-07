@@ -43,4 +43,13 @@ class RssGateway {
             ':RssUrl' => array($RssUrl, PDO::PARAM_STR),
         ));
     }
+
+    /**
+     * Get all RSS in DB
+     * @return array
+     */
+    public function getRSS() : array {
+        $query = "SELECT * FROM TRss;";
+        return $this->con->getResults($query);
+    }
 }

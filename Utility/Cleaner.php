@@ -8,69 +8,53 @@ namespace Utility;
  */
 class Cleaner {
 
-    public static function Clean_page(int $page) : bool {
+    public static function Clean_action(string $str) : bool {
+        if (!isset($str)) {
+            return false;
+        }
+        return filter_var($str, FILTER_SANITIZE_STRING);
+    }
+
+    public static function Clean_name(string $str) {
+        if (!isset($str)) {
+            return false;
+        }
+
+        return filter_var($str, FILTER_SANITIZE_STRING);
+    }
+
+    public static function Clean_page(int $page) {
         if (!isset($page)) {
             return false;
         }
-        $res = filter_var($page, FILTER_VALIDATE_INT);
+        return filter_var($page, FILTER_SANITIZE_NUMBER_INT);
     }
 
-    public static function clean_string(string $str) : bool {
-        if (isset($str)) {
-            return filter_var($str, FILTER_VALIDATE);
-        }
-        return false;
-    }
-
-    public static function Clean_name(string $str) : bool {
-        if (isset($str)) {
-            return filter_var($str, FILTER_VALIDATE_INT);
-        }
-        $regex = "/[A-Z][a-z]{1,30}(-[A-Z])?[a-z]{,30}/";
-        if (!filter_var(
-            $str,
-            FILTER_VALIDATE_REGEXP,
-            array(
-                "options" => array("regexp"=>$regex))
-        )
-        ) {
+    public static function Clean_email(string $str) {
+        if (!isset($str)) {
             return false;
         }
-        return false;
+        return filter_var($str, FILTER_SANITIZE_EMAIL);;
     }
 
-    public static function Clean_surname(string $str) : bool {
-        if (isset($str)) {
-            return filter_var($str, FILTER_VALIDATE_EMAIL);
+    public static function Clean_url(string $str) {
+        if (!isset($str)) {
+            return false;
         }
-        return false;
+        return filter_var($str, FILTER_SANITIZE_URL);
     }
 
-    public static function Clean_email(string $str) : bool {
-        if (isset($str)) {
-            return filter_var($str, FILTER_VALIDATE_EMAIL);
+    public static function Clean_login(string $str) {
+        if (!isset($str)) {
+            return false;
         }
-        return false;
+        return filter_var($str, FILTER_SANITIZE_STRING);
     }
 
-    public static function Clean_login(string $str) : bool {
-        if (isset($str)) {
-            return filter_var($str, FILTER_VALIDATE_EMAIL);
+    public static function Clean_password(string $str) {
+        if (!isset($str)) {
+            return false;
         }
-        return false;
-    }
-
-    public static function Clean_password(string $str) : bool {
-        if (isset($str)) {
-            return filter_var($str, FILTER_VALIDATE_EMAIL);
-        }
-        return false;
-    }
-
-    public static function Clean_url(string $str) : bool {
-        if (isset($str)) {
-            return filter_var($str, FILTER_SANITIZE_EMAIL);
-        }
-        return false;
+        return filter_var($str, FILTER_SANITIZE_STRING);
     }
 }

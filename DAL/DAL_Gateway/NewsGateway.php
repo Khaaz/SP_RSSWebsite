@@ -50,4 +50,21 @@ class NewsGateway {
 
         return $ret;
     }
+
+    /**
+     * Add a RSS feed in DB
+     *
+     * @param \DAL_Class\News $news
+     * @return bool
+     */
+    public function addNews(\DAL_Class\News $news) : bool {
+        $query = "INSERT INTO TNews VALUES(:Url, :Website, :Title, :Description, :Date);";
+        return $this->con->executeQuery($query, array(
+            ':Url' => array($news->getUrl(), PDO::PARAM_STR),
+            ':WebsiteN' => array($news->getWebsite(), PDO::PARAM_STR),
+            ':Title' => array($news->getTitle(), PDO::PARAM_STR),
+            ':Description' => array($news->getDescription(), PDO::PARAM_STR),
+            ':Date' => array($news->getDate(), PDO::PARAM_STR),
+        ));
+    }
 }

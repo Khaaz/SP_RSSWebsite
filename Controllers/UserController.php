@@ -30,17 +30,19 @@ class UserController {
         global $NEWSPERPAGE;
         $CURPAGE = $_GET['page'];
 
+        // DEFAULT
         if (empty($CURPAGE) || strlen($CURPAGE) == 0 || $CURPAGE < 1) {
             $CURPAGE = 1;
         }
 
-        //if (!Valider::Valid_page($page)) {
-        //    $page = 1;
-        //}
+        // VALID AND CLEAN
+        if (!\Utility\Valider::Valid_page($CURPAGE)) {
+            $CURPAGE = 1;
+        }
+        $CURPAGE = \Utility\Cleaner::Clean_page($CURPAGE);
 
         $TOTNEWS = \Models\Model::getTotalNews();
         $TOTPAGE = ceil($TOTNEWS / $NEWSPERPAGE);
-
         if ($CURPAGE > $TOTPAGE) {
             $CURPAGE = 1;
         }
@@ -56,15 +58,21 @@ class UserController {
 
     }
 
-    function onConnect($REP, $VIEWS) {
+    function onConnect($REP, $VIEWS)
+    {
         $usr = $_POST['username'];
         $pwd = $_POST['password'];
 
+        if (!\Utility\Valider::Valid_login($usr) || !\Utility\Valider::Valid_password($pwd)) {
+            $this->base(true, $REP, $VIEWS, true);
+            return;
+        };
+
+        $usr = \Utility\Cleaner::Clean_login($usr);
+        $pwd = \Utility\Cleaner::Clean_login($pwd);
+
         $ADMIN = \Models\ModelAdmin::connection($usr, $pwd);
 
-        $FAILCON = $ADMIN ? false : true;
-
-        $this->base(true, $REP, $VIEWS, $FAILCON);
-        //require ($REP.$VIEWS['base']);
+        $ADMIN ? $this->base($ADMIN, $REP, $VIEWS, false) : $this->base(true, $REP, $VIEWS, true);
     }
 }

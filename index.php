@@ -22,6 +22,10 @@
     $myLibLoader->register();
     $myLibLoader = new SplClassLoader('Utility', './');
     $myLibLoader->register();
+    $myLibLoader = new SplClassLoader('Services', './');
+    $myLibLoader->register();
+    $myLibLoader = new SplClassLoader('Services_Parser', './Services/');
+    $myLibLoader->register();
 
     //require 'script.php';
     $cont = new \Controllers\FrontController();

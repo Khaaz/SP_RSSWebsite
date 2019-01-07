@@ -89,7 +89,7 @@
                 echo '<li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 2:30 PM - 4:00 PM</li>';
                 echo '<li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> Room 4019</li>';
                 echo '</ul>';
-                echo '<p>Lorem ipsum dolsit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>';
+                echo '<p>'.$n->getDescription().'</p>';
                 echo '</div>';
                 echo '</div>';
             }

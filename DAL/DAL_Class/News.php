@@ -9,14 +9,16 @@ namespace DAL_Class;
 class News {
 
     private $url;
-    private $title;
     private $website;
+    private $title;
+    private $description;
     private $date;
 
-    public function __construct(string $url, string $title, string $website, string $date) {
+    public function __construct(string $url, string $website, string $title, string $description, string $date) {
         $this->url = $url;
-        $this->title = $title;
         $this->website = $website;
+        $this->title = $title;
+        $this->description = $description;
         $this->date = $date;
     }
 
@@ -31,6 +33,14 @@ class News {
     /**
      * @return string
      */
+    public function getWebsite(): string
+    {
+        return $this->website;
+    }
+
+    /**
+     * @return string
+     */
     public function getTitle(): string
     {
         return $this->title;
@@ -39,9 +49,9 @@ class News {
     /**
      * @return string
      */
-    public function getWebsite(): string
+    public function getDescription(): string
     {
-        return $this->website;
+        return $this->description;
     }
 
     /**

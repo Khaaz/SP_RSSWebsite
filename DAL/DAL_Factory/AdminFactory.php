@@ -11,7 +11,7 @@ class AdminFactory {
      * Create one Admin from DB data
      *
      * @param $data
-     * @return Admin
+     * @return \DAL_Class\Admin
      */
     public static function createOneAdmin($data) : \DAL_Class\Admin {
         return new \DAL_Class\Admin(
