@@ -68,8 +68,13 @@ class AdminController {
 
         $rss = new \DAL_Class\Rss($url, $name, $website);
 
-        \Models\ModelAdmin::addRSS($rss);
-
+        try {
+            \Models\ModelAdmin::addRSS($rss);
+        } catch (\PDOException $e) {
+            $this->baseAdmin($twig, $actor, true, false, true);
+            return;
+        }
+        
         $this->baseAdmin($twig, $actor, true, false, false);
     }
 
