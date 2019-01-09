@@ -155,7 +155,7 @@ class __TwigTemplate_8f6bc0e12536aca180173197c2e54bfded8080ac005dcede2f565014d10
                 <ul class=\"pagination mx-auto\">
                     ";
         // line 90
-        if ((($context["curPage"] ?? null) && ($context["totPage"] ?? null))) {
+        if (($context["curPage"] ?? null)) {
             // line 91
             echo "                        <li class='page-item'><a class='page-link' href=\"index.php?page=";
             echo twig_escape_filter($this->env, ($context["prev"] ?? null), "html", null, true);

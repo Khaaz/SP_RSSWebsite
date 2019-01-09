@@ -2,44 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62f52a96-021f-47c9-8632-a492d683fd81" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Configs/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Configs/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Configs/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Configs/config.template.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/Configs/config.template.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/FrontController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/FrontController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/Connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAL/Connection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/DAL_Class/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAL/DAL_Class/Admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/DAL_Class/News.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAL/DAL_Class/News.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/DAL_Class/Rss.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAL/DAL_Class/Rss.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/DAL_Factory/AdminFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAL/DAL_Factory/AdminFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/DAL_Factory/NewsFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAL/DAL_Factory/NewsFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/DAL_Factory/RssFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAL/DAL_Factory/RssFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/DAL_Gateway/AdminGateway.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAL/DAL_Gateway/AdminGateway.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/DAL_Gateway/NewsGateway.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAL/DAL_Gateway/NewsGateway.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DAL/DAL_Gateway/RssGateway.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAL/DAL_Gateway/RssGateway.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/IActor.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/IActor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/ModelAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/ModelAdmin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/ModelService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/ModelService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/Services_Parser/NewsParsed.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/Services_Parser/NewsParsed.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/Services_Parser/XmlParser.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/Services_Parser/XmlParser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/XmlService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/XmlService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utility/Autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utility/Autoload.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utility/AutoloadOld.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utility/AutoloadOld.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utility/Cleaner.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utility/Cleaner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utility/SplClassLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utility/SplClassLoader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utility/Valider.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utility/Valider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/base.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/base.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/error.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/error.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parser.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/script.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/script.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testparser.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/testparser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/base.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,13 +11,16 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ComposerSettings">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+  </component>
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Views/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="34" column="38" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
+            <state relative-caret-position="317">
+              <caret line="89" column="33" selection-start-line="89" selection-start-column="33" selection-end-line="89" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -61,8 +28,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controllers/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="28" column="28" lean-forward="true" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+            <state relative-caret-position="699">
+              <caret line="61" column="33" selection-start-line="61" selection-start-column="25" selection-end-line="61" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -78,6 +45,7 @@
       <find>{{</find>
       <find>$CURPAGE</find>
       <find>;</find>
+      <find>totPage</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -109,6 +77,14 @@
       </list>
     </option>
   </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/twig/twig" />
+    </include_path>
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="960" />
     <option name="y" value="-15" />
@@ -120,7 +96,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -155,6 +130,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -192,19 +168,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1546895342941</updated>
-      <workItem from="1546895359978" duration="11343000" />
+      <workItem from="1546895359978" duration="11745000" />
+      <workItem from="1547036180318" duration="132000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11343000" />
+    <option name="totallyTimeSpent" value="11877000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1062" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.25267094" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Database Changes" order="1" />
@@ -246,9 +223,7 @@
     <entry file="file://$PROJECT_DIR$/src/Models/ModelService.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Services/appel.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Services/appel.php" />
     <entry file="file://$PROJECT_DIR$/src/Services/XmlService.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="587">
@@ -378,13 +353,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="28" column="28" lean-forward="true" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
@@ -392,10 +360,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="699">
+          <caret line="61" column="33" selection-start-line="61" selection-start-column="25" selection-end-line="61" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Views/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="34" column="38" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
+        <state relative-caret-position="317">
+          <caret line="89" column="33" selection-start-line="89" selection-start-column="33" selection-end-line="89" selection-end-column="33" />
         </state>
       </provider>
     </entry>

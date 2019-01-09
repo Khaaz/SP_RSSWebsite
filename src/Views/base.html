@@ -87,7 +87,7 @@
             <!-- Print navigator -->
             <nav class="row mx-auto p-5 w-100" aria-label="Navigation">
                 <ul class="pagination mx-auto">
-                    {% if curPage and totPage %}
+                    {% if curPage %}
                         <li class='page-item'><a class='page-link' href="index.php?page={{ prev }}">Previous</a></li>
                         {% for n in min..max%}
                             {% if curPage == n %}
