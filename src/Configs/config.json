@@ -1,5 +1,0 @@
-{
-  "db": "mysql:host=berlin.iut.local;dbname=dblarossi",
-  "login": "larossi",
-  "password": "achanger"
-}

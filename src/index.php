@@ -36,7 +36,6 @@
     $twig = new Twig_Environment($loader, array(
         'cache' => '../compiled',
     ));
-
     $cont = new \Controllers\FrontController($twig);
 
 ?>
