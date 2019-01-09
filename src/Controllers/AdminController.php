@@ -13,7 +13,7 @@ class AdminController {
     function execute($twig, $action, $actor) {
         switch ($action) {
             case 'admin':
-                $this->baseAdmin($twig, $actor);
+                $this->baseAdmin($twig, $actor, false, false, false);
                 break;
             case 'disconnect':
                 $this->onDisconnect();
@@ -26,18 +26,20 @@ class AdminController {
                 break;
             case null:
             default:
-                $this->baseAdmin($twig, $actor);
+                $this->baseAdmin($twig, $actor, false, false, false);
         }
     }
 
-    function baseAdmin($twig, $actor) {
+    function baseAdmin($twig, $actor, $add, $remove, $failed) {
 
         $rssList = \Models\ModelAdmin::getRSS();
-
         $template = $twig->load('admin.html');
         echo $template->render(array(
             'RSSlist' => $rssList,
             'admin' => $actor,
+            'add' => $add,
+            'remove' => $remove,
+            'failed' => $failed
         ));
     }
 
@@ -56,7 +58,7 @@ class AdminController {
         $website = $_POST['WebsiteUrl'];
 
         if (!\Utility\Valider::Valid_url($url) || !\Utility\Valider::Valid_websiteName($name) || !\Utility\Valider::Valid_url($website)) {
-            $this->baseAdmin($twig, $actor);
+            $this->baseAdmin($twig, $actor, true, false, true);
             return;
         };
 
@@ -68,7 +70,7 @@ class AdminController {
 
         \Models\ModelAdmin::addRSS($rss);
 
-        $this->baseAdmin($twig, $actor);
+        $this->baseAdmin($twig, $actor, true, false, false);
     }
 
     public function onDelRss($twig, $actor) {
@@ -78,8 +80,10 @@ class AdminController {
         if (\Utility\Valider::Valid_url($rssUrl)) {
             $rssUrl = \Utility\Cleaner::Clean_url($rssUrl);
             \Models\ModelAdmin::delRSS($rssUrl);
+            $this->baseAdmin($twig, $actor, false, true, true);
+            return;
         }
 
-        $this->baseAdmin($twig, $actor);
+        $this->baseAdmin($twig, $actor, false, true, false);
     }
 }

@@ -40,6 +40,25 @@
         <a id="usrconnected" href="index.php?action=disconnect">{{ admin.username }}</a>
     {% endif %}
 
+
+    {% if add %}
+
+        {% if failed %}
+            <p> RSS couldn't be added. </p>
+        {% else %}
+            <p> RSS was succesfully added. </p>
+        {% endif %}
+
+    {% elseif remove %}
+
+        {% if failed %}
+            <p> RSS couldn't be removed. </p>
+        {% else %}
+            <p> RSS was succesfully removed. </p>
+        {% endif %}
+
+    {% endif %}
+
     <div class="container row mx-auto p-5">
         <div class="wrap-contact2 row mx-auto">
             <form action="index.php?action=addRss" method="post" class="contact2-form validate-form">
