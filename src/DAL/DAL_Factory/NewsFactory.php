@@ -22,7 +22,8 @@ class NewsFactory {
             $data["Website"],
             $data["Title"],
             $data["Description"],
-            $data["Date"]
+            $data["Date"],
+            $data["NbClics"]
         );
     }
 
@@ -53,7 +54,7 @@ class NewsFactory {
         $allNews = [];
 
         foreach($data as $d){
-            $allNews[] = new News($d->url, $d->website, $d->title, $d->description, $d->date);
+            $allNews[] = new News($d->url, $d->website, $d->title, $d->description, $d->date, $d->nbClics);
         }
 
         return $allNews;

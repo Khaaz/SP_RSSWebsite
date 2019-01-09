@@ -8,7 +8,14 @@ namespace Utility;
  */
 class Cleaner {
 
-    public static function Clean_action(string $str) : bool {
+    public static function Clean_string(string $str) {
+        if (!isset($str)) {
+            return false;
+        }
+        return filter_var($str, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+    }
+
+    public static function Clean_action(string $str) {
         if (!isset($str)) {
             return false;
         }
@@ -42,7 +49,7 @@ class Cleaner {
         if (!isset($str)) {
             return false;
         }
-        return filter_var($str, FILTER_SANITIZE_EMAIL);;
+        return filter_var($str, FILTER_SANITIZE_EMAIL);
     }
 
     public static function Clean_url(string $str) {

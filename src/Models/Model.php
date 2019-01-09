@@ -29,4 +29,19 @@ class Model {
         $gw = new \DAL_Gateway\NewsGateway();
         return $gw->getTotNews()[0];
     }
+
+    /**
+     * Get the 5 most clicked news to show
+     *
+     * @return array
+     */
+    public static function getTrendings(): array {
+        $gw = new \DAL_Gateway\NewsGateway();
+        return $gw->getTrendings();
+    }
+
+    public static function addClick(string $url) :bool {
+        $gw = new \DAL_Gateway\NewsGateway();
+        return $gw->addClick($url);
+    }
 }

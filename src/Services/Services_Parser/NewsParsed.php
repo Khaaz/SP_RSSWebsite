@@ -15,6 +15,7 @@ class NewsParsed {
     public $title;
     public $description;
     public $date;
+    public $nbClics;
 
     /**
      * @param mixed $url
@@ -29,7 +30,7 @@ class NewsParsed {
      */
     public function setWebsite($website)
     {
-        preg_match('/^(http(s)?:\/\/)?(www\.)?([a-zA-Z]*\.[a-z]{2,8})/', $website, $matches);
+        preg_match('/^(http(s)?:\/\/)?(www\.)?([a-zA-Z0-9\.]*)\//', $website, $matches);
         $this->website = $matches[4];
     }
 
@@ -41,7 +42,7 @@ class NewsParsed {
         if ($this->title) {
             $this->title = $this->title.$title;
         } else {
-            $this->title = $title;
+            $this->title = $title ? $title : 'No title available.';
         }
     }
 
@@ -53,7 +54,7 @@ class NewsParsed {
         if ($this->description) {
             $this->description = $this->description.$description;
         } else {
-            $this->description = $description;
+            $this->description = $description ? $description : 'No description available.';
         }
     }
 
@@ -69,5 +70,38 @@ class NewsParsed {
             $published_date = new DateTime('now');
         }
         $this->date = $published_date->format('Y-m-d  H:i:s');
+
+        if (!$this->date) {
+            $this->date = 'No date available.';
+        }
+    }
+
+    public function cleanFillEmpty() {
+
+        $this->url = \Utility\Cleaner::Clean_url($this->url);
+        $this->nbClics = 0;
+
+        if (!isset($this->website)) {
+            $this->website = 'No website available.';
+        } else {
+            $this->website = \Utility\Cleaner::Clean_websiteName($this->website);
+        }
+
+        if (!isset($this->title)) {
+            $this->title = 'No title available.';
+        } else {
+            $this->title = \Utility\Cleaner::Clean_string($this->title);
+        }
+
+        if (!$this->description) {
+            $this->description = 'No description available.';
+        } else {
+            $this->description = \Utility\Cleaner::Clean_string($this->description);
+        }
+
+        if (!$this->date) {
+            $published_date = new DateTime('now');
+            $this->date = $published_date->format('Y-m-d  H:i:s');
+        }
     }
 }
