@@ -33,9 +33,7 @@
     require_once '../vendor/autoload.php';
 
     $loader = new Twig_Loader_Filesystem('./Views/');
-    $twig = new Twig_Environment($loader, array(
-        'cache' => '../compiled',
-    ));
+    $twig = new Twig_Environment($loader);
     $cont = new \Controllers\FrontController($twig);
 
 ?>

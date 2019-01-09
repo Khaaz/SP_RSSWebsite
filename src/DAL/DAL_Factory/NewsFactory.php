@@ -2,8 +2,6 @@
 
 namespace DAL_Factory;
 
-use DAL_Class\News;
-
 /**
  * DAL_Class NewsFactory
  * @package DAL_Factory
@@ -54,7 +52,7 @@ class NewsFactory {
         $allNews = [];
 
         foreach($data as $d){
-            $allNews[] = new News($d->url, $d->website, $d->title, $d->description, $d->date, $d->nbClics);
+            $allNews[] = new \DAL_Class\News($d->url, $d->website, $d->title, $d->description, $d->date, $d->nbClics);
         }
 
         return $allNews;

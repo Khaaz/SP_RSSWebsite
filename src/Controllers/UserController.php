@@ -57,7 +57,6 @@ class UserController {
         $prev = $curPage <= 1 ? 1 : $curPage - 1;
         $next = $curPage >= $totPage ? $totPage : $curPage + 1;
 
-
         $template = $twig->load('base.html');
         echo $template->render(array(
             'admin' => $actor,

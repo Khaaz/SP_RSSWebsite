@@ -25,11 +25,11 @@ class NewsGateway {
      */
     public function getNews(int $page) : array {
         global $NEWSPERPAGE;
-        $query = "SELECT * FROM TNews ORDER BY Date DESC LIMIT :  news, :newsperpage;";
+        $query = "SELECT * FROM TNews ORDER BY Date DESC LIMIT :news, :newsperpage;";
 
         $results = $this->con->getResults($query, array(
             ':news' => array($page, PDO::PARAM_INT),
-            ':newsperpage' => array($NEWSPERPAGE, PDO::PARAM_INT)
+            ':newsperpage' => array($NEWSPERPAGE, PDO::PARAM_INT),
         ));
 
         return \DAL_Factory\NewsFactory::createNews($results);
@@ -78,14 +78,14 @@ class NewsGateway {
 
     public function addClick(string $url) : bool {
         $query = "UPDATE TNews SET nbClics = nbClics + 1 WHERE Url = :Url";
-        return $this->con->executeQuery($query,array(
+        return $this->con->executeQuery($query, array(
             ':Url' => array($url, PDO::PARAM_STR),
         ));
     }
 
     public function getTrendings() :array {
         global $NEWSPERPAGE;
-        $query = "SELECT * FROM TNews ORDER BY NbClics DESC LIMIT 1, :newsperpage;";
+        $query = "SELECT * FROM TNews ORDER BY NbClics DESC LIMIT 0, :newsperpage;";
 
         $results = $this->con->getResults($query, array(
             ':newsperpage' => array($NEWSPERPAGE, PDO::PARAM_INT)
