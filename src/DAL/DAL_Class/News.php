@@ -13,13 +13,15 @@ class News {
     private $title;
     private $description;
     private $date;
+    private $nbClics;
 
-    public function __construct(string $url, string $website, string $title, string $description, string $date) {
+    public function __construct(string $url, string $website, string $title, string $description, string $date, int $nbClics) {
         $this->url = $url;
         $this->website = $website;
         $this->title = $title;
         $this->description = $description;
         $this->date = $date;
+        $this->nbClics =$nbClics;
     }
 
     /**
@@ -60,5 +62,13 @@ class News {
     public function getDate(): string
     {
         return $this->date;
+    }
+
+    /**
+     * @return int
+     */
+    public function getNbClics(): int
+    {
+        return $this->nbClics;
     }
 }

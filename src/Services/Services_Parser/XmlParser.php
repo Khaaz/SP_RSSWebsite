@@ -65,6 +65,7 @@ class XmlParser {
         $this->depth--;
 
         if ($name == 'ITEM') {
+            $this->curNews->cleanFillEmpty();
             $this->result[] = $this->curNews;
             $this->curNews = null;
         }

@@ -1,7 +1,7 @@
 <?php
 
 /* base.html */
-class __TwigTemplate_8f6bc0e12536aca180173197c2e54bfded8080ac005dcede2f565014d104695b extends Twig_Template
+class __TwigTemplate_17c435384798b9d7d0640371e381a75a973cedfd5ccdb89c0ec00cd61fdbf234 extends Twig_Template
 {
     private $source;
 
@@ -48,7 +48,7 @@ class __TwigTemplate_8f6bc0e12536aca180173197c2e54bfded8080ac005dcede2f565014d10
                 <nav class=\"nav nav-masthead justify-content-center\">
                     <a class=\"nav-link active\" href=\"index.php?page=0\">Home</a>
                     <a class=\"nav-link\" href=\"index.php?action=admin\">Admin</a>
-                    <a class=\"nav-link\" href=\"#\">Trending</a>
+                    <a class=\"nav-link\" href=\"index.php?action=trending\">Trending</a>
                 </nav>
             </div>
 
@@ -234,6 +234,6 @@ class __TwigTemplate_8f6bc0e12536aca180173197c2e54bfded8080ac005dcede2f565014d10
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "base.html", "/srv/http/RSSWebsite/src/Views/base.html");
+        return new Twig_Source("", "base.html", "/var/www/html/RSSWebsite/src/Views/base.html");
     }
 }

@@ -28,7 +28,7 @@
 
     //require 'script.php';
 
-    //require "testparser.php";
+    require "testparser.php";
 
     require_once '../vendor/autoload.php';
 

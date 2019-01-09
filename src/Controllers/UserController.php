@@ -18,6 +18,10 @@ class UserController {
             case 'connect':
                 $this->onConnect($twig);
                 break;
+            case 'trending':
+                $actor = \Models\ModelAdmin::isActor();
+                $this->onTrending($twig, $actor);
+                break;
             case null:
             default:
                 $actor = \Models\ModelAdmin::isActor();
@@ -75,6 +79,9 @@ class UserController {
         }
 
         $link = \Utility\Cleaner::Clean_url($link);
+
+        \Models\Model::addClick($link);
+
         header("Location: $link");
     }
 
@@ -94,5 +101,17 @@ class UserController {
         $admin = \Models\ModelAdmin::connection($usr, $pwd);
 
         $admin ? $this->base($twig, $admin, false) : $this->base($twig,true, true);
+    }
+
+    function onTrending($twig, $actor) {
+
+        $trendings = \Models\Model::getTrendings();
+
+        $template = $twig->load('trending.html');
+        echo $template->render(array(
+            'admin' => $actor,
+            'trendings' => $trendings,
+        ));
+
     }
 }

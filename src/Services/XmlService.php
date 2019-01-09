@@ -44,7 +44,6 @@ class XmlService {
             // Parse rss feed
             $this->parser->parse($rss);
             $result = $this->parser->getResult(); // result is an array of newsParsed
-
             // Create a list of News from parsed News
             $news = \DAL_Factory\NewsFactory::createNewsFromParsed($result);
 
