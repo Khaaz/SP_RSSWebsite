@@ -19,8 +19,8 @@ $NEWSPERPAGE = 5;
 
 // Views
 $VIEWS['error']='Views/error.php';
-$VIEWS['base']='Views/base.php';
-$VIEWS['admin']='Views/admin.php';
+//$VIEWS['base']='Views/base.php';
+//$VIEWS['admin']='Views/admin.php';
 
 
 ?>

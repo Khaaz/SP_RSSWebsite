@@ -1,5 +1,6 @@
 <?php
 
+
     require_once(__DIR__ . '/Configs/config.php');
 
     //require_once(__DIR__ . '/Utility/AutoloadOld.php');
@@ -28,7 +29,7 @@
 
     //require 'script.php';
 
-    require "testparser.php";
+    //require "testparser.php";
 
     require_once '../vendor/autoload.php';
 
