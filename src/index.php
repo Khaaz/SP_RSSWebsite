@@ -27,7 +27,7 @@
     $myLibLoader = new SplClassLoader('Services_Parser', './Services/');
     $myLibLoader->register();
 
-    //require 'script.php';
+    //require 'addadmin.php';
 
     //require "testparser.php";
 
